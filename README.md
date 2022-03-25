@@ -1,6 +1,8 @@
 # Paradise Bot List
 Source code for the Paradise Bot List Website
 
+> The official Paradise Bot List site has been shut down!
+
 ---
 
 ## Features

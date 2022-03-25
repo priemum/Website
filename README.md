@@ -11,19 +11,19 @@ Source code for the Paradise Bot List Website
 - Upvoting for Bots
 - Certification program for bots
 - Vanity URL for Certified Bots
-- Partner Program
-- Server Count API
-- GET API 
+- Builtin Partner Program
+- Post Server Count API
+- API to Fetch Bot Info
 - Custom bot pages
 - Webhook updates for bots 
-- Markdown  and HTML Long Description
+- Markdown and HTML Long Description
 - Custom Bot Invite Link
 - Custom Bot Website Link
-- Has Search
-- Mobile Support 
-- Tags for bots
+- Search Panel/Feature
+- Basics Mobile Support 
+- Custom Tags for bots
 - Custom Bot Support Link
-- Friendly and active staff
+- Support for Themes (Pending setup)
 
 ```
 

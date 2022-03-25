@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Maintenance Mode Enabled</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Float four columns side by side */
+.column {
+  float: center;
+  width: 50%;
+  padding: 0 10px;
+}
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+</style>
+
+</head>
+<body>
+    <%- include("../partials/header", { bot, user, path, }) %>
+<div class = "left">
+<center>
+<h1><strong>Be Back Soon</strong></h1>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>Maintenance Mode</h3>
+      <p>Hmm, It looks like our Devs are busy working on something and have enabled our Maintenance Mode
+      <br>
+         Please be patient while we work on improving our services 😀 
+      </p>
+      <h3>While you wait</h3>
+      <a href="https://paradisebots.net/join">Join our Discord</a>
+      <a href="https://status.paradisebots.net">View our Status Page</a>
+    </div>
+  </div>
+</div>
+</center>
+</div>
+<br><br><br>
+<%- include("../partials/footer") %>
+</body>
+</html>

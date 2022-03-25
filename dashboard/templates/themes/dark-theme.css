@@ -1,0 +1,458 @@
+:root {
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+  animation: fadeIn 0.7s;
+}
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  animation: fadeIn 0.7s;
+  margin: 0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2c2c34;
+  min-width: 160px;
+  transition: 0.4s;
+  border-radius: 5px;
+  width: 0px;
+  height: 330px;
+  animation: fadeIn 0.7s;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: rgba(255, 148, 77, 0.822);
+  padding: 12px 16px;
+  text-decoration: none;
+  transition: 0.4s;
+  display: block;
+  animation: fadeIn 0.7s;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  transition: 0.4s;
+  animation: fadeIn 0.7s;
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  transition: 0.4s;
+  display: block;
+  animation: fadeIn 1s;
+}
+.dropdown {
+  float: right;
+  overflow: hidden;
+  animation: fadeIn 0.7s;
+}
+footer {
+  text-align: left;
+  padding: 3px;
+  background-color: #758acf;
+  animation: fadeIn 0.7s;
+}
+  /* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #758acf;
+  padding: 10px 10px;
+  animation: fadeIn 0.4s;
+}
+/* Style the header links */
+.header a {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  transition: 0.7s;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 3px;
+}
+.header b {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 3px;
+}
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: rgb(250, 150, 150);
+  color: rgb(255, 255, 255);
+}
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  content: "\f023";
+  color: white;
+}
+.header.a:after {
+     content: "\f07a";
+     font-family: FontAwesome;
+     font-size: 14px;
+     padding-left: 5px;
+}
+.header.a:after {
+     content: "\f023";
+     font-family: FontAwesome;
+     font-size: 14px;
+     padding-left: 4px;
+}
+.header.b:after {
+     content: "\f07a";
+     font-family: FontAwesome;
+     font-size: 14px;
+     padding-left: 5px;
+}
+.header.b:after {
+     content: "\f023";
+     font-family: FontAwesome;
+     font-size: 14px;
+     padding-left: 4px;
+}
+.header a.active:hover {
+  content: "\f023";
+  background-color: rgb(177, 216, 255);
+  color: rgb(255, 255, 255);
+}
+.button {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.5s;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  line-height: 25px;
+  width: 130%;
+  background-color: rgb(252, 252, 252);
+  outline: none;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px;
+}
+.button:hover {
+  background-color: rgb(233, 133, 133);
+  border-color: rgb(255, 255, 255);
+  color: white;
+}
+.button.custom {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.5s;
+  border-radius: 5px;
+  line-height: 25px;
+  width: 130%;
+  background-color: rgb(202, 202, 202);
+  outline: none;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px;
+}
+.button.custom:hover {
+  background-color: rgb(233, 133, 133);
+  border-color: rgb(255, 255, 255);
+  color: white;
+}
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+.header-left {
+  float: left;
+}
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 600px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Hind';
+    src: url('https://fonts.gstatic.com/s/hind/v8/5aU69_a8oxmIdGl4BA.woff2');
+}
+  body {
+    font-family: "Hind", Arial, sans-serif;
+    background-color: #2c2c34;
+  }
+
+ .dropdown2 {
+  float: right;
+  overflow: hidden;
+  animation: fadeIn 0.7s;
+}
+.dropdown2 .dropbtn2 {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  animation: fadeIn 0.7s;
+  margin: 0;
+}
+.dropdown2-content {
+  display: none;
+  position: absolute;
+  background-color: #2c2c34;
+  min-width: 160px;
+  transition: 0.4s;
+  width: 250px;
+  animation: fadeIn 0.7s;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown2-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  transition: 0.4s;
+  display: block;
+  animation: fadeIn 0.7s;
+  text-align: left;
+}
+.dropdown2-content a:hover {
+  transition: 0.4s;
+  animation: fadeIn 0.7s;
+  background-color: rgb(245, 195, 195);
+}
+.dropdown2:hover .dropdown2-content {
+  transition: 0.4s;
+  display: block;
+  animation: fadeIn 1s;
+}
+.dropdown2 {
+  float: right;
+  overflow: hidden;
+  animation: fadeIn 0.7s;
+}
+.bigbox{
+  border-radius: 10px;
+  box-shadow: 1px 1px 25px #888888;
+  width: 100%;
+  padding: 20px 10px;
+  background-color: #758ACF;
+  animation: fadeIn 1s;
+  text-align: left;
+}
+.botpage_card {
+    margin-right: 40px; 
+    margin-left: 40px; 
+    background-color: #7289DA; 
+    border-radius: 20px; 
+    padding: 10px;
+}
+.docsbox{
+  border-radius: 10px;
+  box-shadow: 1px 1px 25px #888888;
+  width: 100%;
+  padding: 20px 10px;
+  background-color: #758ACF;
+  animation: fadeIn 1s;
+  text-align: left;
+}
+.addinput{
+ width: 100%;
+ height: 40px;
+ animation: fadeIn 0.7s;
+ transition: all 0.5s;
+ border-color: rgb(255, 255, 255);
+ color: rgb(0, 0, 0);
+ border-color: rgb(95, 95, 95);
+ background-color: rgb(255, 255, 255);
+ border-radius: 5px;
+ border-style: solid;
+ }
+ .addinput:hover{
+ width: 100%;
+ height: 40px;
+ transition: all 0.5s;
+ border-color: rgb(0, 0, 0);
+ color: rgb(0, 0, 0);
+ background-color: rgb(255, 255, 255);
+ border-radius: 5px;
+ }
+ .botcard{
+   width: 350px;
+   height: 500px;
+   background-color: #758ACF;
+   animation: fadeIn 0.7s;
+   transition: all 0.5s;
+   padding: 20px 10px;
+   margin: 15px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 10px #888888;
+   color: white;
+   text-align: center;
+ }
+ .rulecard{
+   width: 350px;
+   height: 100%;
+   background-color: #758ACF;
+   animation: fadeIn 0.7s;
+   transition: all 0.5s;
+   padding: 20px 10px;
+   margin: 15px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 10px #888888;
+   color: white;
+   text-align: center;
+ }
+.rulecard2{
+   width: 350px;
+   height: 100%;
+   background-color: #758ACF;
+   animation: fadeIn 0.7s;
+   transition: all 0.5s;
+   padding: 20px 10px;
+   margin: 15px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 10px #888888;
+   color: white;
+   text-align: center;
+ }
+.rulecard3{
+   width: 350px;
+   height: 100%;
+   background-color: #758ACF;
+   animation: fadeIn 0.7s;
+   transition: all 0.5s;
+   padding: 20px 10px;
+   margin: 15px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 10px #888888;
+   color: white;
+   text-align: center;
+ }
+.rulecard4{
+   width: 350px;
+   height: 100%;
+   background-color: #758ACF;
+   animation: fadeIn 0.7s;
+   transition: all 0.5s;
+   padding: 20px 10px;
+   margin: 15px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 10px #888888;
+   color: white;
+   text-align: center;
+ }
+ .pendingcard{
+   width: 550px;
+   height: 550px;
+   background-color: #758ACF;
+   animation: fadeIn 0.7s;
+   transition: all 0.5s;
+   padding: 20px 10px;
+   margin: 15px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 10px #888888;
+   color: white;
+   text-align: center;
+ }
+ .viewbutton {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.5s;
+  line-height: 25px;
+  width: 130px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  background-color: rgb(124, 122, 122);;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+}
+.viewbutton:hover {
+  /*background-color: rgb(243, 160, 160);*/
+  background-color: fc7b03;
+  color: rgb(255, 255, 255);
+}
+.viewbutton.active {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.5s;
+  line-height: 25px;
+  width: 130px;
+  border-radius: 3px;
+  /*background-color: rgb(243, 160, 160);*/
+  background-color: fc7b03;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+}
+.viewbutton.active:hover {
+  background-color: rgb(252, 252, 252);
+  color: black;
+}
+.right {
+    position: relative;
+    left: 300px;
+    top: -200px;
+    color: #888888;
+    width: calc(100% - 300px)
+}
+.boticon{
+  padding: 20px;
+  width: 300px;
+  height: 300px;
+  border-radius: 200px;
+}
+.bigbox2{
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888888;
+  width: 4000px;
+  padding: 20px 10px;
+  background-color: #758ACF;
+  animation: fadeIn 1s;
+}
+.box3{
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888888;
+  width: 250px;
+  height: 50px;
+  padding: 20px 10px;
+  background-color: rgb(255, 211, 208);
+  animation: fadeIn 1s;
+}
+}

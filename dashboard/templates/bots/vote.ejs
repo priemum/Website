@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <title>Paradise Bot List - <%= bots.username %></title>
+</head>
+
+<body>
+
+<%- include("../partials/header", { bot, user, path }) %>
+
+<br><br>
+
+<center>
+   <% if (alert) { %>
+      <div style="background-color: rgb(151, 255, 177);  border: solid; border-color: black; width: 100%; border-radius: 20px; padding: 6px">
+        <b style="color: rgb(70, 150, 70);"></strong><%= alert %></b>
+      </div>
+    <% }else if(error){ %>
+      <div style="background-color: rgb(255, 87, 87);  border: solid; border-color: black; width: 100%; border-radius: 20px; padding: 6px">
+        <b style="color: white;"><strong>Error: </strong><%= error %></b>
+      </div>
+      <% } %>
+    </center>
+  <br>
+
+  <center>
+   <div class="container">
+     <div class="botcard">
+       <img style="border-radius: 100px; width: 180px;" src="<%= bots.displayAvatarURL() %>">
+         <h1>Vote for <%= bots.username %></h1>
+          <br>
+           <p>You can vote for this bot once every 12 Hours</p>
+            <br>
+             <form method="POST">
+               <button name="vote" value="vote" class="button" style="width:170px">Vote</button>
+             </form>
+               <button class="button" onclick="window.location.href='/bots/<%= bots.id %> '" style="width:170px;">Go Back</button>
+           </div>
+         </div>
+    </center>
+
+<br><br><br><br><br><br>
+
+<%- include("../partials/footer") %>
+</body>
+</html>

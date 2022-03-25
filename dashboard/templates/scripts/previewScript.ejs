@@ -1,0 +1,61 @@
+<script>
+(function() {
+
+renderDesc();
+
+function validateForm() {
+    let INVALID_STUFFS = 0;
+
+    /* Long Desc */
+    const botLongDesc = $("#longdesc");
+    if(botLongDesc) {
+        const isValid = checkValid(botLongDesc);
+        setValidation(botLongDesc, isValid, "char_300");
+        if(!isValid) INVALID_STUFFS += 1;
+    }
+    const isValid = INVALID_STUFFS === 0;
+    if(!isValid) $("#form-error-popup").text(`Oh snap! ${INVALID_STUFFS} invalid inputs were found! Click submit after fixing them.`).css("display", "block");
+    return isValid;
+}
+function checkValid(div, key) {
+    if(!div.val()) return false;
+    if(key === "char_100" && !(div.val().length >= 50 && div.val().length <= 100)) return false;
+    if(key === "char_300" && div.val().length <= 300) return false;
+    return true;
+}
+function setValidation(div, valid) {
+    const INVALID_CLASS = "is-invalid";
+    const VALID_CLASS = "is-valid";
+    if(valid) {
+        if(div.hasClass(INVALID_CLASS)) div.removeClass(INVALID_CLASS);
+        div.addClass(VALID_CLASS);
+    } else {
+        if(div.hasClass(VALID_CLASS)) div.removeClass(VALID_CLASS);
+        div.addClass(INVALID_CLASS);
+    }
+}
+
+const longDesc = $('#longdesc');
+const longDescPreview = $('#botLongDescPreview');
+
+const sanitizeHtml = require('sanitize-html');
+
+longDesc.on('change keyup paste', renderDesc);
+function renderDesc() {
+    const markdownRender = marked(longDesc.val());
+    const allowedTags = sanitizeHtml.defaults.allowedTags.concat(["img", "center"]);
+    const sanitizedRender = sanitizeHtml(markdownRender, {
+        allowedTags
+    });
+    longDescPreview.html(sanitizedRender);
+}
+$(".custom-control-input").on('change', function() {
+    const tags = [];
+    $.each($("input[name='tags']:checked"), function() {
+        tags.push($(this).val());
+    });
+    if(tags.length > 4) {
+        this.checked = false;
+    }
+})();
+</script>

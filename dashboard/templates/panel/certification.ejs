@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Paradise Bot list - Certification Panel</title>
+</head>
+<body>
+<%- include("../partials/header", { bot, user, path }) %>
+<br>
+<center>
+    <% if (alert) { %>
+      <div style="background-color: rgb(151, 255, 177);  border: solid; border-color: black; width: 100%; border-radius: 20px; padding: 6px">
+        <b style="color: rgb(70, 150, 70);"></strong><%= alert %></b>
+      </div>
+    <% }else if(error){ %>
+      <div style="background-color: rgb(255, 87, 87);  border: solid; border-color: black; width: 100%; border-radius: 20px; padding: 6px">
+        <b style="color: white;"><strong>Error: </strong><%= error %></b>
+      </div>
+      <% } %>
+    </center>
+      <br>
+<center>
+<!-- Certification Queue -->
+<h1><i class="fa fa-certificate"></i> Certification Queue</h1>
+<% if(certification_bots.length === 0) { %>
+    <b><i class="fa fa-warning"></i> There's no bots pending certification!</b>
+  <% }else{ %>
+<div class="container">
+<% certification_bots.map(cert_bots => { %>
+  <div class="pendingcard">
+    <form method="POST">
+      <img src="<%= bot.users.cache.get(cert_bots.botid) ? bot.users.cache.get(cert_bots.botid).displayAvatarURL() : 'https://i.imgur.com/Z1jey6q.png' %>" style="width: 80px; border-radius: 100px;">
+      <h4><%= bot.users.cache.get(cert_bots.botid) ? bot.users.cache.get(cert_bots.botid).username.length > 15 ? bot.users.cache.get(cert_bots.botid).username.slice(0, 15) + "..." : bot.users.cache.get(cert_bots.botid).username : cert_bots.username.length > 15 ? cert_bots.username.slice(0, 15) + "..." : cert_bots.username  %></h4>
+      <p>Using Api: <% if(cert_bots.servers !== 0){ %><i class="fa fa-check" style="color: greenyellow;"></i> <% }else{ %> <i class="fa fa-times" style="color: red;"></i></p> <% } %>
+      <p>Above 75 Server: <% if(cert_bots.servers >= 75){ %> <i class="fa fa-check" style="color: greenyellow;"></i> <% }else{ %><i class="fa fa-times" style="color: red;"></i></p> <% } %>
+      <p>At list for 1 week: <% if(604800000 - (Date.now() - cert_bots.date) < 0){ %> <i class="fa fa-check" style="color: greenyellow;"></i> <% }else{ %><i class="fa fa-times" style="color: red;"></i></p> <% } %>
+      <p>Have 15 votes: <% if(cert_bots.votes >= 15){ %> <i class="fa fa-check" style="color: greenyellow;"></i> <% }else{ %><i class="fa fa-times" style="color: red;"></i></p> <% } %>
+      <button name="uncertify" value="<%= cert_bots.botid %>" style="width: 250px;" class="button"><i class="fa fa-trash"></i> UnCertify</button>
+      <button name="certify" value="<%= cert_bots.botid %>" style="width: 250px;" class="button"><i class="fa fa-check"></i> Certify</button>
+    </form>
+  </div>
+<% }) %>
+</div>
+<% } %>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<%- include("../partials/footer") %>
+</body>
+</html>

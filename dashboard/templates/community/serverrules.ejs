@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <%- include("../partials/header", { bot, user, path, }) %>
+
+<script>
+(function() {
+        //window.addEventListener("load", function(){
+	if (!localStorage.getItem('cookieconsent')) {
+		document.body.innerHTML += '\
+		<div class="cookieconsent" style="position:fixed;padding:20px;left:0;bottom:0;background-color:#000;color:#FFF;text-align:center;width:100%;z-index:99999;">\
+			This website uses cookies to improve your experience. By continuing to use this website, you agree to their use. \
+                <a href="#" style="color:#CCCCCC;">I Understand</a>\
+		</div>\
+		';
+		document.querySelector('.cookieconsent a').onclick = function(e) {
+			e.preventDefault();
+			document.querySelector('.cookieconsent').style.display = 'none';
+			localStorage.setItem('cookieconsent', true);
+		};
+	}
+})();
+</script>
+
+<center><h1 style="color: white">Server Rules</h1></center>
+
+<div id="card" class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+	<p>Any member of the Paradise Bot List discord server is expected to abide by these rules at all times.</p>
+        </div>
+      </div>
+    </div> 
+<hr>
+<div class="container">
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #1</h2>
+          <p>Don’t be a dick, If you want respect you have to give it. Harassing or Disrespecting our Members and or Staff will result in a immediate ban.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #2</h2>
+          <p>All members must conduct them selves in accordance with the<a href="https://discord.com/new/terms"> Discord Terms of Service</a></p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard4">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #3</h2>
+          <p>No discrimination, hate speech or arguing (over stupid stuff; Take that to DMs)<br><br>This includes trash talking:<br><br>A. Other users<br><br>B. Bots<br><br>C. Programming languages, etc<br><br>This also includes:<br><br>A. Racism<br><br>B. Discrimination against Race, Religion or Skin Color<br><br>C. Offensive or Racial Slurs.<br><br>D. Discrimination of Sexual Orientation</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard3">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #4</h2>
+           <p>No self promotion / advertising <br><br>including but not limited to:<br><br>A. Server invites (providing official Discord guild invites or bot support guild invites when asked for is allowed), these can be in the guild or in DMs.<br><br>B. YouTube/streams<br><br>C. Begging people to use your bot</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #5</h2>
+          <p>Don’t spam. (includes mic spam in voice channels)<br><br>A. This includes copypastas/chain mails.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #6</h2>
+           <p>Speak english. This way everyone can understand you. It is our lingua franca after all.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard2">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #7</h2>
+           <p>Don’t spoon-feed or attack beginners. Everyone starts somewhere and asking questions is smart. <br><br> Do not attack people for not knowing how to code. Point them to great learning sources and help them with problems. <br><br> A. Dont just give them finished code because then they only learn to copy more. <br><br> B. If you are a beginner, have a will to learn and do not expect to be spoon-fed.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #8</h2>
+           <p>Be friendly to other users.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #9</h2>
+           <p>Please refrain from posting memes in the #general channel, (Including but not limited to off-topic content and/or conversations) they belong in the #shitpost channel. <br><br> Keep the #general channel to friendly / neutral / intellectual conversations </p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #10</h2>
+           <p>Do not evade punishments.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #11</h2>
+           <p>No political arguments/discussion. This is a Bot Listing Community not the White House </p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #12</h2>
+           <p>No NSFW content, in this server we have no NSFW channels.<br><br> A. This includes communicating access of any kind to NSFW content outside of Discord e.g a picture ID on imgur</p>
+        </div>
+      </div>
+    </div>
+ <div class="rulecard3">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #13</h2>
+           <p> Absolutely no screen sharing, Screen Sharing includes:<br><br>• Screenshot/s of messages in this server posted to Twitter or shared with other Discord Servers or Members<br><br>• Screenshot/s of Direct Messages from our Staff or Members of our server posted to Twitter or shared with other Discord Servers or Members<br><br>• Screenshots of message in other servers</p>
+        </div>
+      </div>
+    </div> 
+   </div>
+</div>
+</body>
+</html>
+<br><br><br><br><br><br>
+<%- include("../partials/footer") %>

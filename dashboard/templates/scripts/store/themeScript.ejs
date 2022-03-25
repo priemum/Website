@@ -1,0 +1,18 @@
+<link rel="stylesheet" id="theme" href="/static/blurple.css">
+
+<script>
+$(document).ready(function() {
+
+    const themeFromLocal = localStorage.getItem("theme");
+
+    const themes = ["blurple", "amoled"];
+
+    const currentTheme = themes.includes(themeFromLocal) ? themeFromLocal : "blurple";
+
+    $("#theme").attr("href", `/static/themes/${currentTheme}.css`);
+
+    document.cookie = "theme=currentTheme; expires=Tue, 19 Jan 2058 03:14:07; path=/"
+  
+    window.location.href=window.location.href
+});
+</script>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+       <meta charset="UTF-8">
+    <meta name="og:description" content="Interested in joining our team?, fill out this app." />
+    <meta name="og:image" content="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" />
+    <meta name="og:title" content="Paradise Bot List | Staff Application" />
+    <meta name="theme-color" content="#758acf" />
+    <meta name="keywords" content="discordbots.org , top.gg, Discordbots.co , Bots , bot list , paradisebots.net, discord bot list , discord boats , blaze , lists, discord bots , discord bots list">
+    <meta property="og:description" content="Interested in joining our team?, fill out this app." />
+    <meta name="og:image" content="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" />
+    <meta name="theme-color" content="#758acf" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Paradise Bot List | Staff Application</title>
+</head>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Float four columns side by side */
+.column {
+  float: center;
+  width: 25%;
+  padding: 0 10px;
+}
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+/* Style the counter cards */
+.staff_apps_card {
+  border-radius: 10px;
+  box-shadow: 1px 1px 25px #888888;
+  width: 75%;
+  height: 75%;
+  padding: 20px 10px;
+  background-color: rgb(117, 138, 207);
+  color: rgb(117, 138, 207);
+  animation: fadeIn 1s;
+  text-align: left;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+</style>
+
+<body>
+<%- include("../partials/header", { bot, user, path, }) %>
+<br>
+<center>
+    <% if (alert) { %>
+      <div style="background-color: rgb(151, 255, 177);  border: solid; border-color: black; width: 100%; height: 40px; border-radius: 20px; padding: 6px">
+        <b style="color: rgb(70, 150, 70);"><%= alert %></b>
+      </div>
+    <% }else if(error){ %>
+      <div style="background-color: rgb(255, 87, 87);  border: solid; border-color: black; width: 100%; height: 40px; border-radius: 20px; padding: 6px">
+        <b style="color: white;"><%= error %></b>
+      </div>
+      <% } %>
+    </center>
+      <br>
+
+<center>
+<h1>Staff Applications</h1>
+     <form method="post">
+     <div class="staff_apps_card">
+       <h2> Application Status:</h2>
+       <hr>
+       <div class="alert">
+         <strong>Applications are Open!</strong>.
+       </div>
+       <hr>
+<p style="color: white;"><i class="fa fa-fw fa-info-circle"></i> List any Experience you have as staff of a Discord Server<br></p>
+<textarea class="input" style="width: 75%; height: 150px;" name="experience" placeholder="List any experience you have in servers."></textarea>
+
+<hr>
+
+<p style="color: white;"><i class="fa fa-fw fa-info-circle" ></i>Position you're applying for<br></p>
+<select name="position">
+  <option value="default" disabled>Select One</option>
+  <option value="757834230251257866">Approver</option>
+  <option value="748977820776267873">Administrator</option>
+  <option value="748977820776267869">Moderator</option>
+</select>
+
+<hr>
+
+<p style="color: white;"><i class="fa fa-fw fa-info-circle" ></i>Why would you like to join our team<br></p>
+<textarea class="input" style="width: 75%; height: 150px;" name="reason" placeholder="Give us reason for joining."></textarea>
+
+<hr>
+
+<p style="color: white;"><i class="fa fa-fw fa-info-circle" ></i>List some of your strengths<br></p>
+<textarea class="input" style="width: 75%; height: 150px;" name="strength" placeholder="ie: good people person"></textarea>
+
+<hr>
+
+<p style="color: white;"><i class="fa fa-fw fa-info-circle" ></i>What would you do if no owners were online, the server was being raided and you had perms to handle it in your own? Would you handle it and if so how?<br></p>
+<textarea class="input" style="width: 75%; height: 150px;" name="handle" placeholder="ie: ban the raid people, lock the chat etc..."></textarea>
+
+<hr>
+
+<p style="color: white;"><i class="fa fa-fw fa-info-circle" ></i>Have you read our rules? (Server and Bot) Can you list a few? .... No cheating!! <br></p>
+<textarea class="input" style="width: 75%; height: 150px;" name="rules" placeholder="ie: no spam etc..."></textarea>
+
+<hr>
+
+<p style="color: white;"><i class="fa fa-fw fa-info-circle" ></i>If approved for either Admin or Moderator you will be put on a one week trial period before receiving the full role (ie: if you apply for admin you get mod for a week first) is this fine?<br></p>
+<select name="trial">
+  <option value="default" disabled>Select One</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+
+<hr>
+
+<p style="color: white;"><i class="fa fa-fw fa-info-circle" ></i>Do you have any development experience, as we are a service based around Discord Bots we will offer support to users who need it with making a bot<br></p>
+<select name="development">
+  <option value="default" disabled>Select One</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>  
+  <option value="Kinda">Kinda</option>
+</select>
+
+<hr>
+
+<p style="color: white;"><i class="fa fa-fw fa-info-circle" ></i>If you chose “kinda” for the question above ^^ please explain here, otherwise leave it empty.<br></p>
+<textarea class="input" style="width: 75%; height: 150px;" name="kinda" value="I Didn't choose kinda" placeholder="ie: because i tried making bot before..."></textarea>
+
+<hr>
+
+<p style="color: white;"><i class="fa fa-fw fa-info-circle" ></i>Do you agree to be bound to our Terms of Service?<br></p>
+<select name="tos">
+  <option value="default" disabled>Select One</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+<br><br><br>
+    <button class="button" name="submit" style="width: 170px;" value="Submit staff program">Send App</button>
+    </div>
+  </form>
+</center>
+<br><br><br>
+<%- include("../partials/footer") %>
+</body>
+</html>

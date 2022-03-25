@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Paradise Bot List -  Api Docs</title>
+</head>
+<body>
+<%- include("../partials/header", { bot, user, path, }) %>
+
+<script>
+(function() {
+        //window.addEventListener("load", function(){
+	if (!localStorage.getItem('cookieconsent')) {
+		document.body.innerHTML += '\
+		<div class="cookieconsent" style="position:fixed;padding:20px;left:0;bottom:0;background-color:#000;color:#FFF;text-align:center;width:100%;z-index:99999;">\
+			This website uses cookies to improve your experience. By continuing to use this website, you agree to their use. \
+                <a href="#" style="color:#CCCCCC;">I Understand</a>\
+		</div>\
+		';
+		document.querySelector('.cookieconsent a').onclick = function(e) {
+			e.preventDefault();
+			document.querySelector('.cookieconsent').style.display = 'none';
+			localStorage.setItem('cookieconsent', true);
+		};
+	}
+})();
+</script>
+
+<br><br><br><br>
+
+<center>
+<h1><i class="fa fa-book"></i> API Docs</h1>
+
+<div class="docsbox">
+    <div style="margin-left: 50px;">
+    <center style="margin-right: 50px;">
+<center style="margin-right: 50px;"><h1>Wrapper <b style="background-color: rgb(64, 149, 247);  border-radius: 5px; padding: 3px; font-size: 16px;">JavaScript</b></h1></center>
+<hr style="margin-left: 50px; margin-right: 80px;">
+
+<b style="font-size: 20px;">
+    Maintainer: Toxic Dev
+    <br>
+    Package Name: paradiseapi.js
+    <br>
+    Link: <a target="_blank" style="text-decoration: none;" href="https://www.npmjs.com/package/paradiseapi.js" style="color: blue">paradiseapi.js<a>
+  </b>
+ </div>
+</div>
+
+<br style="margin-left: 50px; margin-right: 80px;">
+<br style="margin-left: 50px; margin-right: 80px;">
+
+<div class="docsbox">
+    <div style="margin-left: 50px;">
+    <center style="margin-right: 50px;">
+<center style="margin-right: 50px;"><h1>Wrapper <b style="background-color: rgb(64, 149, 247);  border-radius: 5px; padding: 3px; font-size: 16px;">Python</b></h1></center>
+<hr style="margin-left: 50px; margin-right: 80px;">
+
+<b style="font-size: 20px;">
+    Maintainer: TheUndeadBowman
+    <br>
+    Package Name: paradiseapi.py
+    <br>
+    Link: <a target="_blank" style="text-decoration: none;" href="https://gist.github.com/Aryamaan08/6833f31218b00f7792dc900728b0db01" style="color: blue">paradiseapi.py<a>
+  </b>
+ </div>
+</div>
+
+<br style="margin-left: 50px; margin-right: 80px;">
+<br style="margin-left: 50px; margin-right: 80px;">
+
+<div class="docsbox">
+    <div style="margin-left: 50px;">
+    <center style="margin-right: 50px;">
+<hr style="margin-left: 50px; margin-right: 80px;">
+<h1>Method <b style="background-color: rgb(64, 149, 247);  border-radius: 5px; padding: 3px; font-size: 16px;">POST</b><h1>
+<hr style="margin-left: 50px; margin-right: 80px;">
+</center>
+
+
+<b color: white;">Domain:</b>
+<code>https://paradisebots.net</code>
+<br>
+<b color: white;">Endpoint:</b>
+<code>/api/v1/bot/:botid</code>
+<br>
+<h2>Installation</h2>
+<code>npm install paradiseapi.js</code>
+<hr style="margin-left: 50px; margin-right: 80px;">
+<h2>Posting Server & Shard Count</h2>
+
+<code>You can post once every 5 minutes <b>(Rate Limit)</b></code>
+
+<hr style="margin-left: 50px; margin-right: 80px;">
+<h2>Domain Parameters</h2>
+
+<code>botid | Your discord bot id <b>(Required Parameter)</b></code>
+
+<hr style="margin-left: 50px; margin-right: 80px;">
+
+<h2>Headers</h2>
+<code>Content-Type: application/json</code>
+<br>
+<code>Authorization: Api Token <b>(Required Parameter)</b></code>
+
+<hr style="margin-left: 50px; margin-right: 80px;">
+<h2>Body</h2>
+<code>Servers Count | server_count <b>(Required Parameter)</b></code>
+<br>
+<code>Shards Count | shard_count</code>
+<hr style="margin-left: 50px; margin-right: 80px;">
+
+<h2>Response</h2>
+<b>[ Error ] 429 : [PBL] (429): Your are being ratelimited, 1 request per 5 mins.</b>
+<br>
+<b>[ Error ] 404 : [PBL] (404): Can't find server_count.</b>
+<br>
+<b>[ Error ] 404 : [PBL] (404): Authorization header not found.</b>
+<br>
+<b>[ Error ] 400 : [PBL] (400): server_count not integer.</b>
+<br>
+<b>[ Error ] 404 : [PBL] (404): Bot not found!</b>
+<br>
+<b>[ Error ] 400 : [PBL] (400): Incorrect authorization token.</b>
+<br>
+<b>[ Error ] 404 : [PBL] (404): Go generate auth token for your bot!</b>
+<br>
+<b>[ Error ] 400 : [PBL] (400): shard_count not integer.</b>
+<br>
+<b>[ Success ] 200 : [PBL] (200): Your Stats Has Been Posted.</b>
+<br>
+  </div>
+</div>
+
+<br style="margin-left: 50px; margin-right: 80px;">
+<br style="margin-left: 50px; margin-right: 80px;">
+
+<div class="docsbox">
+    <div style="margin-left: 50px;">
+    <center style="margin-right: 50px;">
+<hr style="margin-left: 50px; margin-right: 80px;">
+<h1>Method <b style="background-color: rgb(64, 149, 247);  border-radius: 5px; padding: 3px; font-size: 16px;">GET</b><h1>
+<hr style="margin-left: 50px; margin-right: 80px;">
+</center>
+
+
+<b color: white;">Domain:</b>
+<code>https://paradisebots.net</code>
+<br>
+<b color: white;">Endpoint:</b>
+<code>/api/v1/bots/:botid</code>
+<br>
+<h2>Installation</h2>
+<code>npm install paradiseapi.js</code>
+<hr style="margin-left: 50px; margin-right: 80px;">
+<h2>Domain Parameters</h2>
+
+<code>botid | Your discord bot id <b>(Required Parameter)</b></code>
+
+<hr style="margin-left: 50px; margin-right: 80px;">
+
+<h2>Headers</h2>
+<code>Content-Type: application/json</code>
+<br>
+
+<h2>Response</h2>
+<b>[ Error ] 404 : [PBL] (404): Bot not found!</b>
+<br>
+  </div>
+</div>
+
+</center>
+<br><br><br><br><br><br>
+<%- include("../partials/footer") %>
+</body>
+</html>

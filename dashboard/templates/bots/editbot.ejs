@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.0/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sanitize-html/1.26.0/sanitize-html.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Paradise Bot List - Edit Bot</title>
+  
+  <style>
+  .markdown-body::after {
+        clear: both
+    }
+    .markdown-body {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        color: #ffffff;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 15px;
+        word-wrap: break-word
+    }
+    
+    .markdown-body .pl-c {
+        color: #6a737d
+    }
+    
+    .markdown-body .pl-c1,
+    .markdown-body .pl-s .pl-v {
+        color: #005cc5
+    }
+    
+    .markdown-body .pl-e,
+    .markdown-body .pl-en {
+        color: #6f42c1
+    }
+    
+    .markdown-body .pl-s .pl-s1,
+    .markdown-body .pl-smi {
+        color: #24292e
+    }
+    
+    .markdown-body .pl-ent {
+        color: #22863a
+    }
+    
+    .markdown-body .pl-k {
+        color: #d73a49
+    }
+    
+    .markdown-body .pl-pds{
+        color: #fff
+    }
+    .markdown-body .pl-s{
+        color: #fff
+    }
+    .markdown-body .pl-s .pl-pse .pl-s1{
+        color: #fff
+    }
+    .markdown-body .pl-sr{
+        color: #fff
+    }
+    .markdown-body .pl-sr .pl-cce{
+        color: #fff
+    }
+    .markdown-body .pl-sr .pl-sra{
+        color: #fff
+    }
+    .markdown-body .pl-sr .pl-sre {
+        color: #0967d3
+    }
+    
+    .markdown-body .pl-smw{
+        color: #fff
+    }
+    .markdown-body .pl-v {
+        color: #e36209
+    }
+    
+    .markdown-body .pl-bu {
+        color: #b31d28
+    }
+    
+    .markdown-body .pl-ii {
+        color: #fff;
+        background-color: #b31d28
+    }
+    
+    .markdown-body .pl-c2 {
+        color: #fff;
+        background-color: #d73a49
+    }
+    
+    .markdown-body .pl-c2::before {
+        content: "^M"
+    }
+    
+    .markdown-body .pl-sr .pl-cce {
+        font-weight: 700;
+        color: #22863a
+    }
+    
+    .markdown-body .pl-ml {
+        color: #735c0f
+    }
+    
+    .markdown-body .pl-mh{
+        color: #fff
+    }
+    .markdown-body .pl-mh .pl-en{
+        color: #fff
+    }
+    .markdown-body .pl-ms {
+        font-weight: 700;
+        color: #005cc5
+    }
+    
+    .markdown-body .pl-mi {
+        font-style: italic;
+        color: #24292e
+    }
+    
+    .markdown-body .pl-mb {
+        font-weight: 700;
+        color: #dddddd
+    }
+    
+    .markdown-body .pl-md {
+        color: #b31d28;
+        background-color: #ffeef0;
+        color: #fff;
+    }
+    
+    .markdown-body .pl-mi1 {
+        color: #22863a;
+        background-color: #f0fff4;
+        color: #fff;
+    }
+    
+    .markdown-body .pl-mc {
+        color: #e36209;
+        background-color: #ffebda;
+        color: #fff;
+    }
+    
+    .markdown-body .pl-mi2 {
+        color: #f6f8fa;
+        background-color: #005cc5
+    }
+    
+    .markdown-body .pl-mdr {
+        font-weight: 700;
+        color: #6f42c1
+    }
+    
+    .markdown-body .pl-ba {
+        color: #a1a2a3
+    }
+    
+    .markdown-body .pl-sg {
+        color: #c2c4c5
+    }
+    
+    .markdown-body .pl-corl {
+        text-decoration: underline;
+        color: #044a9b
+    }
+    
+    .markdown-body .octicon {
+        display: inline-block;
+        fill: currentColor;
+        vertical-align: text-bottom
+    }
+    
+    .markdown-body::after{
+        color: #fff
+    }
+    .markdown-body::before {
+        display: table;
+        content: ""
+    }
+    
+    .markdown-body a {
+        background-color: transparent;
+        color: #0366d6;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    
+    .markdown-body a:active{
+        color: #fff
+    }
+    .markdown-body a:hover {
+        outline-width: 0
+    }
+    
+    .markdown-body h1 {
+        margin: .67em 0
+    }
+    
+    .markdown-body img {
+        border-style: none
+    }
+    
+    
+    .markdown-body input {
+        font: inherit;
+        margin: 0;
+        overflow: visible;
+        font-family: inherit;
+        font-size: inherit;
+    }
+    
+    .markdown-body dl dt{
+        color: #fff
+    }
+    .markdown-body strong{
+        color: #fff
+    }
+    .markdown-body table th {
+        font-weight: 600
+    }
+    
+    .markdown-body code,
+    .markdown-body pre {
+        font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace
+    }
+    
+    .markdown-body [type=checkbox] {
+        box-sizing: border-box;
+        padding: 0
+    }
+    
+    .markdown-body * {
+        box-sizing: border-box
+    }
+    
+    .markdown-body a:hover {
+        text-decoration: underline
+    }
+    
+    .markdown-body td{
+        color: #000
+    }
+    .markdown-body th {
+        padding: 0
+    }
+    
+    .markdown-body blockquote {
+        margin: 0
+    }
+    
+    .markdown-body ol ol{
+        color: #fff
+    }
+    .markdown-body ul ol {
+        list-style-type: lower-roman
+    }
+    
+    .markdown-body ol ol ol{
+        color: #fff
+    }
+    .markdown-body ol ul ol{
+        color: #fff
+    }
+    .markdown-body ul ol ol{
+        color: #fff
+    }
+    .markdown-body ul ul ol {
+        list-style-type: lower-alpha
+    }
+    
+    .markdown-body dd {
+        margin-left: 0
+    }
+    
+    .markdown-body .pl-0 {
+        padding-left: 0!important
+    }
+    
+    .markdown-body .pl-1 {
+        padding-left: 4px!important
+    }
+    
+    .markdown-body .pl-2 {
+        padding-left: 8px!important
+    }
+    
+    .markdown-body .pl-3 {
+        padding-left: 16px!important
+    }
+    
+    .markdown-body .pl-4 {
+        padding-left: 24px!important
+    }
+    
+    .markdown-body .pl-5 {
+        padding-left: 32px!important
+    }
+    
+    .markdown-body .pl-6 {
+        padding-left: 40px!important
+    }
+    
+    .markdown-body>:first-child {
+        margin-top: 0!important
+    }
+    
+    .markdown-body>:last-child {
+        margin-bottom: 0!important
+    }
+    
+    .markdown-body a:not([href]) {
+        color: inherit;
+        text-decoration: none
+    }
+    
+    .markdown-body .anchor {
+        float: left;
+        padding-right: 4px;
+        margin-left: -20px;
+    }
+    
+    .markdown-body .anchor:focus {
+        outline: 0
+    }
+    
+    .markdown-body blockquote{
+        color: #fff
+    }
+    .markdown-body dl{
+        color: #fff
+    }
+    .markdown-body ol{
+        color: #fff
+    }
+    .markdown-body p{
+        color: #fff
+    }
+    .markdown-body pre{
+        color: #000
+    }
+    .markdown-body table{
+        color: #000
+    }
+    .markdown-body ul {
+        margin-top: 0;
+        margin-bottom: 16px
+    }
+    
+    .markdown-body blockquote {
+        padding: 0 1em;
+        color: #6a737d;
+        border-left: .25em solid #dfe2e5
+    }
+    
+    .markdown-body h1,
+    .markdown-body h2 {
+        padding-bottom: .3em;
+        border-bottom: 1px solid #eaecef;
+        color: #fff;
+    }
+    
+    .markdown-body blockquote>:first-child {
+        margin-top: 0
+    }
+    
+    .markdown-body blockquote>:last-child {
+        margin-bottom: 0
+    }
+    
+    .markdown-body h1{
+        color: #fff
+    }
+    .markdown-body h2{
+        color: #fff
+    }
+    .markdown-body h3{
+        color: #fff
+    }
+    .markdown-body h4{
+        color: #fff
+    }
+    .markdown-body h5{
+        color: #fff
+    }
+    .markdown-body h6 {
+      color: fff;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
+    
+    .markdown-body h1 .octicon-link{
+        color: #fff
+    }
+    .markdown-body h2 .octicon-link{
+        color: #fff
+    }
+    .markdown-body h3 .octicon-link{
+        color: #fff
+    }
+    .markdown-body h4 .octicon-link{
+        color: #fff
+    }
+    .markdown-body h5 .octicon-link{
+        color: #fff
+    }
+    .markdown-body h6 .octicon-link {
+        color: #fff;
+        vertical-align: middle;
+        visibility: hidden
+    }
+    
+    .markdown-body h1:hover .anchor{
+        color: #fff
+    }
+    .markdown-body h2:hover .anchor{
+        color: #fff
+    }
+    .markdown-body h3:hover .anchor{
+        color: #fff
+    }
+    .markdown-body h4:hover .anchor{
+        color: #fff
+    }
+    .markdown-body h5:hover .anchor{
+        color: #fff
+    }
+    .markdown-body h6:hover .anchor {
+      color :#fff;
+      text-decoration: none
+    }
+    
+    .markdown-body h1:hover .anchor .octicon-link{
+        color: #fff
+    }
+    .markdown-body h2:hover .anchor .octicon-link{
+        color: #fff
+    }
+    .markdown-body h3:hover .anchor .octicon-link,
+    .markdown-body h4:hover .anchor .octicon-link,
+    .markdown-body h5:hover .anchor .octicon-link,
+    .markdown-body h6:hover .anchor .octicon-link {
+        visibility: visible
+    }
+    
+    .markdown-body h1 {
+        font-size: 2em
+    }
+    
+    .markdown-body h2 {
+        font-size: 1.5em
+    }
+    
+    .markdown-body h3 {
+        font-size: 1.25em
+    }
+    
+    .markdown-body h4 {
+        font-size: 1em
+    }
+    
+    .markdown-body h5 {
+        font-size: .875em
+    }
+    
+    .markdown-body h6 {
+        font-size: .85em;
+    }
+    
+    .markdown-body ol,
+    .markdown-body ul {
+        padding-left: 2em
+    }
+    
+    .markdown-body ol ol,
+    .markdown-body ol ul,
+    .markdown-body ul ol,
+    .markdown-body ul ul {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+    
+    .markdown-body li {
+        word-wrap: break-all
+    }
+    
+    .markdown-body li>p {
+        margin-top: 16px
+    }
+    
+    .markdown-body li+li {
+        margin-top: .25em
+    }
+    
+    .markdown-body dl {
+        padding: 0
+    }
+    
+    .markdown-body dl dt {
+        padding: 0;
+        margin-top: 16px;
+        font-size: 1em;
+        font-style: italic
+    }
+    
+    .markdown-body dl dd {
+        padding: 0 16px;
+        margin-bottom: 16px
+    }
+    
+    .markdown-body table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        display: block;
+        width: auto;
+        overflow: auto
+    }
+    
+    .markdown-body table td,
+    .markdown-body table th {
+        padding: 6px 13px;
+        border: 1px solid #dfe2e5
+    }
+    
+    .markdown-body table tr {
+        background-color: #fff;
+        border-top: 1px solid #c6cbd1
+    }
+    
+    .markdown-body table tr:nth-child(2n) {
+        background-color: #f6f8fa
+    }
+    
+    .markdown-body img {
+        max-width: 100%;
+        box-sizing: content-box;
+    }
+    
+    .markdown-body img[align=right] {
+        padding-left: 20px
+    }
+    
+    .markdown-body img[align=left] {
+        padding-right: 20px
+    }
+    
+    .markdown-body code {
+        padding: .2em .4em;
+        margin: 0;
+        font-size: 85%;
+        background-color: #0f0f13b0;
+        border-radius: 3px;
+        color: #fff;
+    }
+    
+    .markdown-body pre {
+        word-wrap: normal
+    }
+    
+    .markdown-body pre>code {
+        padding: 0;
+        margin: 0;
+        font-size: 100%;
+        word-break: normal;
+        white-space: pre;
+        background: 0 0;
+        border: 0
+    }
+    
+    .markdown-body .highlight {
+        margin-bottom: 16px
+    }
+    
+    .markdown-body .highlight pre {
+        margin-bottom: 0;
+        word-break: normal
+    }
+    
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+        padding: 16px;
+        overflow: auto;
+        font-size: 85%;
+        background-color: #f6f8fa;
+        border-radius: 3px;
+        color: #000;
+    }
+    
+    .markdown-body pre code {
+        display: inline;
+        max-width: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        word-wrap: normal;
+        background-color: transparent;
+        border: 0;
+        color: #000;
+    }
+    
+    .markdown-body .full-commit .btn-outline:not(:disabled):hover {
+        color: #005cc5;
+        border-color: #005cc5
+    }
+    
+    .markdown-body kbd {
+        display: inline-block;
+        padding: 3px 5px;
+        font: 11px SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        color: #444d56;
+        vertical-align: middle;
+        background-color: #fafbfc;
+        border: 1px solid #d1d5da;
+        border-bottom-color: #c6cbd1;
+        border-radius: 3px;
+        box-shadow: inset 0 -1px 0 #c6cbd1
+    }
+    
+    .markdown-body :checked+.radio-label {
+        position: relative;
+        z-index: 1;
+        border-color: #0366d6
+    }
+    
+    .markdown-body .task-list-item {
+        list-style-type: none
+    }
+    
+    .markdown-body .task-list-item+.task-list-item {
+        margin-top: 3px
+    }
+    
+    .markdown-body .task-list-item input {
+        margin: 0 .2em .25em -1.6em;
+        vertical-align: middle
+    }
+    
+    
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    
+    .tg td {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        padding: 15px 7px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        word-break: normal;
+        border-color: white;
+    }
+    
+    .tg th {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        padding: 15px 7px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        word-break: normal;
+        border-color: white;
+    }
+    
+    .tg .tg-0lax {
+        text-align: left;
+        vertical-align: top
+    }
+    
+    table {
+        margin-right: 0 !important;
+        width: 20%;
+        margin: 30px;
+        margin-top: 0;
+        color: #000;
+    }
+    
+    iframe {
+        height: 1000px;
+        width: 100%;
+        border: 0;
+    }
+  </style>
+  
+</head>
+<body>
+<%- include("../partials/header", { bot, user, path, }) %>
+<%- include("../scripts/previewScript") %>
+<br><br><br>
+<center>
+    <% if (alert) { %>
+      <div style="background-color: rgb(151, 255, 177);  border: solid; border-color: black; width: 100%; border-radius: 20px; padding: 6px">
+        <b style="color: rgb(70, 150, 70);"></strong><%= alert %></b>
+      </div>
+    <% }else if(error){ %>
+      <div style="background-color: rgb(255, 87, 87);  border: solid; border-color: black; width: 100%; border-radius: 20px; padding: 6px">
+        <b style="color: white;"><strong>Error: </strong><%= error %></b>
+      </div>
+      <% } %>
+    </center>
+      <br>
+<center>
+    <form style="margin-top: 1em;" method="POST"> <!-- method="post" tiggers a POST request to the same url with the body of the form control inputs -->
+<div class="bigbox">
+    <center><h1><strong><i class="fa fa-plus"></i> Edit Bot</strong></h1></center>
+    <div style="margin-left: 50px;">
+    <hr style="margin-right: 50px;">
+    <h3>ClientID <code style="color: red;">*<code></h3> <p>Your bot client id!</p>
+        <input style="color: grey; border-color: white;" name="clientid" class="addinput" type="text" value="<%= bots.botid %>" readonly></input>
+    <h3>Additional Owners</h3> <p>Additional bot owners! (Seperated by spaces)</p>
+        <input name="additionals" class="addinput" type="text" value="<%= bots.additionalOwners %>"></input>
+    <h3>Prefix <code style="color: red;">*<code></h3> <p>your bot prefix which comes before any command!</p>
+        <input name="prefix" class="addinput" type="text" maxlength="20" value="<%= bots.prefix %>" required></input>
+    <h3>Library <code style="color: red;">*<code></h3> <p>what language your bot is coded with!</p>
+        <select class="select" name="library" id="library" required>
+        <option value="<%= bots.library %>"><%= bots.library %></option>
+        <option value="discordbot-script">discordbot-script</option>
+        <option value="discordcr">discordcr</option>
+        <option value="nyxx">nyxx</option>
+        <option value="Discord.net">Discord.Net</option>
+        <option value="DSharpPlus">DSharpPlus</option>
+        <option value="discord.js">discord.js</option>
+        <option value="discord.py">discord.py</option>
+        <option value="discord4j">discord4j</option>
+        <option value="discordgo">discordgo</option>
+        <option value="restcord">restcord</option>
+        <option value="disco">disco</option>
+        <option value="Discordia">Discordia</option>
+        <option value="discordrb">discordrb</option>
+        <option value="jda">jda</option>
+        <option value="javacord">javacord</option>
+        <option value="eris">eris</option>
+        <option value="klasa">Klasa</option>
+        <option value="Discord-Akairo">Discord Akairo</option>
+        <option value="Nostrum">Nostrum</option>
+        <option value="coxir">coxir</option>
+        <option value="RestCord">RestCord</option>
+        <option value="Yasmin">Yasmin</option>
+        <option value="serenity">serenity</option>
+        <option value="SwiftDiscord">SwiftDiscord</option>
+        <option value="Sword">Sword</option>
+        <option value="other">Other</option>
+        </select>
+    <h3>Tags <code style="color: red;">*<code></h3> <p>Ctrl + Click to select multiple tags!, Max tags is 4.</p>
+          <select name="tags" id="tags" class="select tags" size="4" required multiple>
+                <% if(bots.tags.includes("Moderation")){ %>
+                <option value="Moderation" selected>Moderation</option>
+                <% }else{ %>
+                <option value="Moderation" >Moderation</option>
+                        <% } %>
+                <% if(bots.tags.includes("Economy")){ %>
+                <option value="Economy" selected>Economy</option>
+                <% }else{ %>
+                <option value="Economy" >Economy</option>
+                        <% } %>
+                <% if(bots.tags.includes("Logging")){ %>
+                <option value="Logging" selected>Logging</option>
+                <% }else{ %>
+                <option value="Logging" >Logging</option>
+                        <% } %>
+                <% if(bots.tags.includes("Role Management")){ %>
+                <option value="Role Management" selected>Role Management</option>
+                <% }else{ %>
+                <option value="Role Management" >Role Management</option>
+                        <% } %>
+                <% if(bots.tags.includes("Fun")){ %>
+                <option value="Fun" selected>Fun</option>
+                <% }else{ %>
+                <option value="Fun" >Fun</option>
+                        <% } %>
+                <% if(bots.tags.includes("Leveling")){ %>
+                <option value="Leveling" selected>Leveling</option>
+                <% }else{ %>
+                <option value="Leveling" >Leveling</option>
+                        <% } %>
+               <% if(bots.tags.includes("Music")){ %>
+                <option value="Music" selected>Music</option>
+                <% }else{ %>
+                <option value="Music" >Music</option>
+                        <% } %>
+                <% if(bots.tags.includes("Role Play")){ %>
+                <option value="Role Play" selected>Role Play</option>
+                <% }else{ %>
+                <option value="Role Play" >Role Play</option>
+                        <% } %>
+                <% if(bots.tags.includes("Utility")){ %>
+                <option value="Utility" selected>Utility</option>
+                <% }else{ %>
+                <option value="Utility" >Utility</option>
+                        <% } %>
+                <% if(bots.tags.includes("Games")){ %>
+                <option value="Games" selected>Games</option>
+                <% }else{ %>
+                <option value="Games" >Games</option>
+                         <% } %>     
+                <% if(bots.tags.includes("Web Dashboard")){ %>
+                <option value="Web Dashboard" selected>Web Dashboard</option>
+                <% }else{ %>
+                <option value="Web Dashboard" >Web Dashboard</option>
+                        <% } %>      
+                <% if(bots.tags.includes("NSFW")){ %>
+                <option value="NSFW" selected>NSFW</option>
+                <% }else{ %>
+                <option value="NSFW" >NSFW</option>
+                        <% } %>      
+               <% if(bots.tags.includes("Social")){ %>
+                <option value="Social" selected>Social</option>
+                <% }else{ %>
+                <option value="Social" >Social</option>
+                        <% } %>         
+                <% if(bots.tags.includes("Anime")){ %>
+                <option value="Anime" selected>Anime</option>
+                <% }else{ %>
+                <option value="Anime" >Anime</option>
+                        <% } %>         
+                <% if(bots.tags.includes("Statictics")){ %>
+                <option value="Statictics" selected>Statictics</option>
+                <% }else{ %>
+                <option value="Statictics" >Statictics</option>
+                        <% } %>   
+                <% if(bots.tags.includes("Triva")){ %>
+                <option value="Triva" selected>Triva</option>
+                <% }else{ %>
+                <option value="Triva" >Triva</option>
+                        <% } %>   
+                <% if(bots.tags.includes("Quiz")){ %>
+                <option value="Quiz" selected>Quiz</option>
+                <% }else{ %>
+                <option value="Quiz" >Quiz</option>
+                        <% } %>  
+                <% if(bots.tags.includes("Configuration")){ %>
+                <option value="Configuration" selected>Configuration</option>
+                <% }else{ %>
+                <option value="Configuration" >Configuration</option>
+                        <% } %>
+                <% if(bots.tags.includes("Open-Source")) { %>
+                     <option value="OpenSource" selected>Open-Source</option>
+                <% } else { %>
+                     <option value="OpenSource" >Open-Source</option>
+                <% } %>
+                             
+          </select>
+    <h3>Support Server Invite</h3> <p>your bots main support server!</p>
+            <input name="serverinvite" class="addinput" type="text" value="<%= bots.serverlink %>"></input>
+    <h3>Website</h3><p>your bots website!</p>
+            <input name="website" class="addinput" type="text" value="<%= bots.website %>"></input>
+    <h3>GitHub</h3><p>Add your bots GitHub!</p>
+            <input name="github" class="addinput" type="text" value="<%= bots.github %>"></input>
+    <h3>Donate Url</h3><p>your donate url site!</p>
+            <input name="donateurl" class="addinput" type="text" value="<%= bots.donate %>"></input>    
+    <h3>Webhook Url</h3><p>Should have https:// to work and get votes!</p>
+            <input name="webhook" class="addinput" type="text" value="<%= bots.webhook %>"></input>
+    <h3>Invite Url</h3><p>your custom invite url without admin permissions, if you leave empty we will generate one!</p>
+            <input name="botinvite" class="addinput" type="text" value="<%= bots.invite %>"></input>
+            <h3>Banner URL</h3><p>Add a custom banner to your bot! Must be a URL link. Max 1350px by 2980px.</p>
+            <input name="botbanner" class="addinput" type="text" value="<%= bots.banner %>">
+            <h3>Short Description <code style="color: red;">*</code></h3><p>Brief shot desc in less than 150 characters</p>
+            <input name="shortdesc" class="addinput" maxlength="150" type="text" value="<%= bots.short %>" required></input>
+     <h3>Long Description <code style="color: red;">*</code></h3><p>Support's <a href="https://guides.github.com/features/mastering-markdown/">Markdown</a> and HTML | can't be less than 300 characters</p>
+            <textarea class="input" type="text" id="longdesc" name="longdesc" style="width: 100%; height: 250px;" placeholder="i.e My bot is multi purpose with the following features..." required><%= bots.long %></textarea>
+            <div id="Preview_window" class="fullscreen"><span class="close">&times;</span><div class="preview_screen"><p class="markdown-body" id="preview_text"></p></div></div>
+            <br>
+            <a id="PreviewBtn" class="button" style="padding: 0px;" data-children-count="0">Preview</a>
+           <input style="width:170px" class="button" type="submit"></input>
+           <div id="loading" class="fullscreen">
+             <center><div class="loader"></div></center>
+           </div>
+           <div id="Preview_window" class="fullscreen"><span class="close">&times;</span><div class="preview_screen"><p class="markdown-body" id="preview_text"></p></div></div>
+    </form>
+</div>
+</div>
+</center>
+<br><br><br><br><br><br>
+<%- include("../partials/footer") %>
+</body>
+
+<script>
+//invite generator
+
+document.getElementById("PopoutBtn").onclick = function() {
+  document.getElementById("Popout_window").style.display = "block";
+  document.getElementById("botBtn").style.display = "none";
+}
+
+
+document.getElementsByClassName("close")[0].onclick = function() {
+  document.getElementById("Popout_window").style.display = "none";
+  document.getElementById("botBtn").style.display = "block";
+}
+
+//preview desc
+
+document.getElementById("PreviewBtn").onclick = function() {
+document.getElementById("loading").style.display = "block";
+document.getElementById("botBtn").style.display = "none";
+$.ajax({
+  type: "POST",
+  data: JSON.stringify({
+      "markdown": "convert markdown to html",
+      "content": document.getElementById("long").value
+  }),
+  url: `/convert`,
+  dataType: "json",
+  contentType: 'application/json',
+  success: function(res){
+  setTimeout(() => {
+    document.getElementById("preview_text").innerHTML = res.content;
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("Preview_window").style.display = "block";
+    document.getElementById("botBtn").style.display = "none";
+  }, 1000)
+  }
+});
+}
+
+
+document.getElementsByClassName("close")[1].onclick = function() {
+document.getElementById("Preview_window").style.display = "none";
+document.getElementById("botBtn").style.display = "block";
+}
+
+
+window.onclick = function(event) {
+if (event.target == document.getElementById("Preview_window")) {
+document.getElementById("Preview_window").style.display = "none";
+document.getElementById("botBtn").style.display = "block";
+}else if (event.target == document.getElementById("Popout_window")) {
+document.getElementById("Popout_window").style.display = "none";
+document.getElementById("botBtn").style.display = "block";
+}else if (event.target == document.getElementById("Widgets_window")) {
+document.getElementById("Widgets_window").style.display = "none";
+}
+
+}
+function webhook(){
+  $.ajax({
+    type: "POST",
+    data: JSON.stringify({
+        "webhook_test": "test webhook",
+        "webhook": document.getElementById("webhook").value,
+    }),
+    url: `/convert`,
+    dataType: "json",
+    contentType: 'application/json',
+    success: function(res){
+       alert(res.message)
+    }
+  });
+}
+function custom_webhook(){
+  $.ajax({
+    type: "POST",
+    data: JSON.stringify({
+        "custom_webhook": document.getElementById("custom_webhook").value,
+        "auth": document.getElementById("custom_webhook_auth").value
+    }),
+    url: `/convert`,
+    dataType: "json",
+    contentType: 'application/json',
+    success: function(res){
+       alert(res.message)
+    }
+  });
+}
+        </script>
+</html>          

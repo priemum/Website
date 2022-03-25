@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Paradise Bot list - Staff Panel</title>
+</head>
+<body>
+<%- include("partials/header", { bot, user, path, }) %>
+<br>
+<center>
+    <% if (alert) { %>
+      <div style="background-color: rgb(151, 255, 177);  border: solid; border-color: black; width: 100%; height: 40px; border-radius: 20px; padding: 6px">
+        <b style="color: rgb(70, 150, 70);"><%= alert %></b>
+      </div>
+    <% }else if(error){ %>
+      <div style="background-color: rgb(255, 87, 87);  border: solid; border-color: black; width: 100%; height: 40px; border-radius: 20px; padding: 6px">
+        <b style="color: white;"><%= error %></b>
+      </div>
+      <% } %>
+    </center>
+      <br>
+<center>
+<h1><i class="fa fa-window-restore"></i> Paradise Staff Panel</h1>
+<br>
+<div class="container">
+
+<% if(user){ %>
+  <% if(bot.config.higherStaff.includes(user.id)) { %> 
+  <a href="/panel/admin" class="button" style="width: 350px; margin-top: 30px;"><i class="fa fa-window-restore"></i> Web Admin Panel</a>
+  <% } %>
+<% } %>
+<a href="/panel/queue" class="button" style="width: 350px; margin-top: 30px;"><i class="fa fa-window-restore"></i> Bots in Queue Panel</a>
+<a href="/panel/certification" class="button" style="width: 350px; margin-top: 30px;"><i class="fa fa-certificate"></i> Certification Panel</a>
+<a href="/panel/reports" class="button" style="width: 350px; margin-top: 30px;"><i class="fa fa-bar-chart"></i> Reports Panel</a>
+<a href="https://paradisebotlist.github.io/Server-Documentation/index.html" class="button" style="width: 350px; margin-top: 30px;"><i class="fa fa-book"></i> Staff Docs</a>
+</center>
+<hr style="margin-left: 200px; margin-right: 200px;">
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+<%- include("partials/footer") %>
+</body>
+</html>

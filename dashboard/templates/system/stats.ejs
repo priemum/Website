@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="UTF-8">
+    <meta name="og:description" content="Paradise Bot List Statistics" />
+    <meta name="og:image" content="https://media.discordapp.net/attachments/734686866690932767/752734798476476506/ParadiseLogoNew.png" />
+    <meta name="og:title" content="Paradise Bot List | Stats" />
+    <meta name="theme-color" content="#758acf" />
+    <meta name="keywords" content="discordbots.org , top.gg, Discordbots.co , Bots , bot list , paradisebots.net, discord bot list , discord boats , blaze , lists, discord bots , discord bots list">
+    <meta property="og:description" content="Paradise Bot List Statistics" />
+    <meta name="og:image" content="https://media.discordapp.net/attachments/734686866690932767/752734798476476506/ParadiseLogoNew.png" />
+    <meta name="theme-color" content="#758acf" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Paradise Bot List | Stats</title>
+</head>
+<body>
+  
+<%- include("../partials/header", { bot, user, path, }) %>
+<br><br><br><br><br><br>
+
+<div class="container">
+  <div class="stats-card">
+   <h1>Queue</h1>
+<table id="stats-table">
+    <tr>
+      <th>Statistic</th>
+      <th>Status</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+    <td> <i class="fa fa-fw fa-users" aria-hidden="true"></i> Approved Bots:</td>
+    <td><%= ApprovedBots %> Bots listed</td>
+    <td>Total number of Bots that have been Approved on our website</td>
+  </tr>
+  <tr>
+    <td> <i class="fa fa-fw fa-users" aria-hidden="true"></i>Queue Size:</td>
+    <td><%= botsInQueue %> Bots in queue.</td>
+    <td>Total number of Bots in Queue</td>
+  </tr>
+  </table>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="stats-card">
+   <h1>Statistics</h1>
+<table id="stats-table">
+    <tr>
+    <th>Statistic</th>
+    <th>Status</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td> <i class="fa fa-fw fa-clock-o" aria-hidden="true"></i> Uptime:</td>
+    <td><%= uptime %></td>
+    <td>Uptime for both the Paradise Bit List Website and Management Bot</td>
+  </tr>
+  <tr>
+    <td> <i class="fa fa-fw fa-tasks" aria-hidden="true"></i> Memory Usage:</td>
+    <td><%= memory %>MB</td>
+    <td>Paradise Bot List Memory Usage</td>
+  </tr>
+  <tr>
+    <td> <i class="fa fa-fw fa-exclamation-circle" aria-hidden="true"></i> Status:</td>
+    <td><%= bot.user.presence.status.toUpperCase() %></td>
+    <td>The current status (ONLINE, OFFLINE etc)</td>
+  </tr>
+  </table>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="stats-card"> 
+   <h1>Versions</h1>
+ <table id="stats-table">
+   <tr>
+    <th>Statistic</th>
+    <th>Status</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td> <i class="fa fa-fw fa-cogs" aria-hidden="true"></i> API:</td>
+    <td><%= bot.config.apiVersion %></td>
+    <td>Correct version of the Paradise Bots API</td>
+  </tr>
+  <tr>
+    <td> <i class="fa fa-fw fa-cog" aria-hidden="true"></i> Website:</td>
+    <td><%= bot.config.webVersion %></td>
+    <td>Current version of the Paradise Bots Website</td>
+  </tr>
+  <tr>
+    <td> <i class="fa fa-fw fa-cog" aria-hidden="true"></i> Bot:</td>
+    <td><%= bot.config.botVersion %></td>
+    <td>Current version for the Paradise Bots Management Bot</td>
+  </tr>
+  <tr>
+    <td> <i class="fa fa-fw fa-cog" aria-hidden="true"></i> Node:</td>
+    <td><%= bot.config.nodeVersion %></td>
+    <td>Current version of Node used for the Paradise Bots Project</td>
+  </tr>
+  <tr>
+    <td> <i class="fa fa-fw fa-cog" aria-hidden="true"></i>Discord.js</td>
+    <td><%= bot.config.djsVersion %></td>
+    <td>Current version of Discord.js used for the Paradise Bots Project</td>
+    </tr>
+  </table>
+  </div>
+</div>
+
+<br><br><br><br><br><br>
+<%- include("../partials/footer") %>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Paradise Bot list - Staff Panel</title>
+</head>
+
+<body>
+
+<%- include("../partials/header", { bot, user, path, }) %>
+
+<br>
+
+<center>
+    <% if (alert) { %>
+      <div style="background-color: rgb(151, 255, 177);  border: solid; border-color: black; width: 100%; border-radius: 20px; padding: 6px">
+        <b style="color: rgb(70, 150, 70);"></strong><%= alert %></b>
+      </div>
+    <% }else if(error){ %>
+      <div style="background-color: rgb(255, 87, 87);  border: solid; border-color: black; width: 100%; border-radius: 20px; padding: 6px">
+        <b style="color: white;"><strong>Error: </strong><%= error %></b>
+      </div>
+      <% } %>
+    </center>
+<br>
+
+<center>
+<h1> Admin Panel</h1>
+<hr style="margin-left: 200px; margin-right: 200px;">
+
+<center>
+  <h1>Partner Apps</h1>
+<div class="container">
+  <% if(partners.length === 0){ %>
+    <b style="font-size: 30px;">No partners apps to display.</b><br>
+    <% }else{ %>
+  <% partners.forEach(partner => { %>
+    <div class="panel_apps_card">
+      <div style="margin-right: 50px; margin-left: 50px;">
+      <br>
+      <b style="color: white;">Partner App from: <%= partner.username %> (<%= partner.userID %>)</b>
+     <hr>
+        <p style="font-size: 20px; color: white;">What are you Partnering?: <%= partner.what_youre_partnering %></p>
+        <br><br>
+        Why and What do you want to partner?: <%= partner.reason_for_partner %>
+        <br><br>
+        Members Count (If partnering a Server): <%= partner.members %>
+        <br><br>
+        What can you offer?: <%= partner.what_you_offer %>
+        <br><br>
+        Agreement: <%= partner.agreement %>
+        <br><br>
+        <a href="<%= partner.invite %>">Partner Link</a>
+        </p>
+      <br>
+      <form style="margin-top: 1em;" method="POST"> <!-- method="post" tiggers a POST request to the same url with the body of the form control inputs -->
+      <button name="accept_partner" value="<%= partner.userID %>" class="button custom" style="width: 130px;">Accept</button>
+      <button name="deny_partner" value="<%= partner.userID %>" class="button custom" style="width: 130px;">Deny</button>
+      </form>
+      </div>
+      </div>
+    <% }) %>
+    <% } %>
+  </div>
+  </form>
+ </center>
+
+<hr style="margin-left: 200px; margin-right: 200px;">
+
+<center>
+  <h1>Staff Apps</h1>
+<div class="container">
+  <% if(staff_apps.length === 0){ %>
+    <b style="font-size: 30px;"><i class="fa fa-wrench"></i> No staff apps</b><br>
+    <% }else{ %>
+  <% staff_apps.forEach(staff => { %>
+    <div class="panel_apps_card">
+      <div style="margin-right: 50px; margin-left: 50px;">
+      <br>
+      <b style="color: white;">Staff App from: <%= staff.username %> (<%= staff.userID %>)</b>
+     <hr>
+     <p style="color: white;">List any Experience you have as staff of a Discord Server: <%= staff.experience %></p>
+     <p style="color: white;">The position you're applying for: <%= bot.guilds.cache.get(bot.config.guildid).roles.cache.get(staff.position).name %></p>
+     <p style="color: white;">Why would you like to join our team: <%= staff.reason %></p>
+     <p style="color: white;">List some of your strengths: <%= staff.strength %></p>
+     <p style="color: white;">What would you do if no owners were online, the server was being raided and you had perms to handle it in your own? Would you handle it and if so how?: <%= staff.handle %></p>
+     <p style="color: white;">Have you read our rules? (Server and Bot) Can you list a few? .... No cheating!!: <%= staff.rules %></p>
+     <p style="color: white;">If approved for either Admin or Moderator you will be put on a one week trial period before receiving the full role (ie: if you apply for admin you get mod for a week first) is this fine?: <%= staff.trial %></p>
+     <p style="color: white;">Do you have any development experience, as we are a service based around Discord Bots we will offer support to users who need it with making a bot: <%= staff.development %></p>
+     <p style="color: white;">If you chose “kinda” for the question above ^^ please explain here, otherwise leave it empty: <%= staff.kinda %></p>
+     <p style="color: white;">Do you agree to be bound to our Terms of Service?: <%= staff.tos %></p>
+      <br>
+      <form style="margin-top: 1em;" method="POST"> <!-- method="post" tiggers a POST request to the same url with the body of the form control inputs -->
+      <button name="accept_staff" value="<%= staff.userID %>" class="button custom" style="width: 130px;">Accept</button>
+      <button name="deny_staff" value="<%= staff.userID %>" class="button custom" style="width: 130px;">Deny</button>
+      </form>
+      </div>
+      </div>
+    <% }) %>
+    <% } %>
+  </div>
+  </form>
+  </center>
+
+<hr style="margin-left: 200px; margin-right: 200px;">
+
+<div class="terms_card">
+<center>
+<h1><i class="fa fa-trash"></i> Delete a Bot</h1>
+<hr>
+ <form style="margin-top: 1em;" method="POST"> <!-- method="post" tiggers a POST request to the same url with the body of the form control inputs -->
+<p>Write Bot ID if you want to delete it</p>
+<input class="w3-input w3-border"  style="border-radius: 5px; width: 75%" maxlength="18" type="text" name="clientid" placeholder="i.e 759457997259724" required></input>
+<hr>
+<p>Write a reason for delete</p>
+<textarea class="input" style="width: 75%; height: 180px;" name="deletereason" placeholder="i.e Bot mass dm people after we verify it!" required></textarea>
+<br>
+<button name="checkingdelete" value="hmmmm" class="button custom" style="width: 120px;">Delete Bot</button>
+ </form>
+</center>
+</div>
+
+<br><br>
+
+<div class="terms_card">
+<center>
+<h1><i class="fa fa-exchange"></i> Transfer Ownership</h1>
+<hr>
+ <form style="margin-top: 1em;" method="POST"> <!-- method="post" tiggers a POST request to the same url with the body of the form control inputs -->
+<p>Write a Bot ID to transfer</p>
+<input class="w3-input w3-border"  style="border-radius: 5px; width: 75%" maxlength="18" type="text" name="clientid" placeholder="i.e 759457997259724" required></input>
+<hr>
+<p>Write a User ID to transfer the bot to</p>
+<input class="w3-input w3-border"  style="border-radius: 5px; width: 75%" maxlength="18" type="text" name="userid" placeholder="i.e 510065483693817867" required></input>
+<hr>
+<p>Write a reason for transfer</p>
+<textarea class="input" style="width: 75%; height: 180px;" name="transferreason" placeholder="i.e Owner requested a transfer!" required></textarea>
+<br>
+<button name="checkingtransfer" value="hmmmm" class="button custom" style="width: 120px;">Transfer Bot</button>
+ </form>
+</center>
+</div>
+</center>
+
+<br><br><br><br><br><br>
+</body>
+<%- include("../partials/footer") %>
+</html>

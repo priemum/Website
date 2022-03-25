@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <%- include("../partials/header", { bot, user, path, }) %>
+
+<center><h1 style="color: white">Bot Rules</h1></center>
+
+<script>
+(function() {
+        //window.addEventListener("load", function(){
+	if (!localStorage.getItem('cookieconsent')) {
+		document.body.innerHTML += '\
+		<div class="cookieconsent" style="position:fixed;padding:20px;left:0;bottom:0;background-color:#000;color:#FFF;text-align:center;width:100%;z-index:99999;">\
+			This website uses cookies to improve your experience. By continuing to use this website, you agree to their use. \
+                <a href="#" style="color:#CCCCCC;">I Understand</a>\
+		</div>\
+		';
+		document.querySelector('.cookieconsent a').onclick = function(e) {
+			e.preventDefault();
+			document.querySelector('.cookieconsent').style.display = 'none';
+			localStorage.setItem('cookieconsent', true);
+		};
+	}
+})();
+</script>
+
+<div id="card" class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+	<p>Bots that are added to the list are not allowed to:</p>
+        </div>
+      </div>
+    </div> 
+<hr>
+<div class="container">
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #1</h2>
+          <p>Break the<a href="https://discord.com/new/terms"> Discord Terms of Service</a></p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #2</h2>
+          <p>Have NSFW names/avatars/command responses (in non-NSFW channels).</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #3</h2>
+          <p>Advertise anything NSFW in the short or long description.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #4</h2>
+           <p>Be a clone or fork of another bot.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #5</h2>
+          <p>Contain malicious scripts/code.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #6</h2>
+           <p>Hide any Buttons added to the Bots Page by our Staff or Developers (IE: Report, Delete etc).</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #7</h2>
+           <p>Autoplay video or audio</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #8</h2>
+           <p>Use CSS/JS or anything to hide Paradise Bot List placed ads/banners.</p>
+        </div>
+      </div>
+    </div>
+  <div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #9</h2>
+           <p>We offer a 4 Day geace period for bots that are offline, After that it will be removed from the list and kicked from our server. You can re-apply when its online.</p>
+        </div>
+      </div>
+    </div>
+</div>
+<br><br>
+
+<center><h1 style="color: white">Bot Page Rules</h1></center>
+<div id="card" class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+	<p>On your bot page, you are not allowed to:</p>
+        </div>
+      </div>
+    </div> 
+<hr>
+<div class="container">
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #1</h2>
+          <p>Include spam/junk characters in your bot description or intentionally use up characters to reach the 300 character limit.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #2</h2>
+          <p>Use your page maliciously against users by either providing or linking to malicious content.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #3</h2>
+          <p>Advertise any competitors (bot/server lists)</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #4</h2>
+          <p>Block any essential features, this includes buttons and advertisements</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #5</h2>
+          <p>Use any of the provided buttons to link to unrelated content.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Rule #6</h2>
+          <p>List the incorrect prefix on your bots page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<br><br>
+
+<center><h1 style="color: white">Bot Requirements</h1></center>
+<div id="card" class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+	<p>Bots in queue will be declined if they:</p>
+        </div>
+      </div>
+    </div>
+<hr> 
+<div class="container">
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Req #1</h2>
+           <p><br>Do not comply with the bot rules</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Req #2</h2>
+           <p>Are offline. (All bots must be online they can not be tested if they are offline)</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Req #3</h2>
+           <p>Fail to provide an easily accessible list of commands. (IE: No Help Command or Help Command explanation in the long Description)</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Req #4</h2>
+           <p>Have no actual features.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Req #5</h2>
+           <p>Allow NSFW content (including but not limited to the Urban Dictionary, links that source to pornographic material) outside of NSFW channels..</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Req #6</h2>
+           <p>Provide "Pinging" or "Uptime" services for Glitch or any other Host Provider in an attempt to bypass host provided uptime limitations.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Req #7</h2>
+           <p>Provide less then 7 Functional Commands, Not including the help command.</p>
+        </div>
+      </div>
+    </div>
+ </div>
+<br><br>
+
+<center><h1 style="color: white">Bot Terms</h1></center>
+<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+	<p>Bots will be kicked from the server or muted if they:</p>
+        </div>
+      </div>
+    </div> 
+<hr>
+<div class="container">
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Term #1</h2>
+           <p>Send join messages/mass messages/advertisements in direct messages.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Term #2</h2>
+           <p>Spam testing channels.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Term #3</h2>
+           <p>Send level up messages (these should be disabled for this server).</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Term #4</h2>
+           <p>Reply to other bots.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Term #5</h2>
+           <p>Go rogue.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Term #6</h2>
+           <p>Respond to non-prefixed commands.</p>
+        </div>
+      </div>
+    </div>
+<div class="rulecard">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Term #7</h2>
+           <p>Send automatic messages without being triggered by a prefixed command. (ie: Logs) We have a channel these can be sent to</p>
+        </div>
+      </div>
+    </div>
+ </div>
+</body>
+</html>
+<br><br><br><br><br><br>
+<%- include("../partials/footer") %>

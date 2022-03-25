@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include("../partials/header", { bot, user, path }) %>
+  <%- include("../partials/termsCard") %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title><%= bot.user.username %> - Certification</title>
+</head>
+<!-- Alert -->
+<center>
+    <% if (alert) { %>
+      <div style="background-color: rgb(151, 255, 177);  border: solid; border-color: black; width: 100%; height: 70px; border-radius: 20px; padding: 6px">
+        <b style="color: rgb(70, 150, 70);"><%= alert %></b>
+      </div>
+    <% }else if(error){ %>
+      <div style="background-color: rgb(255, 87, 87);  border: solid; border-color: black; width: 100%; height: 70px; border-radius: 20px; padding: 6px">
+        <b style="color: white;"><%= error %></b>
+      </div>
+      <% } %>
+  </center>
+      <br>
+<body>
+<!-- Certification Process -->
+<center>
+  <h2>Certification Apps</h2>
+</center>
+  <hr>
+<center>
+ <div class="terms_card">
+  <div class="left">
+   <center><h3><i class="fa fa-book"></i> Requirements</h3></center>
+    <hr>
+      <ul style="font-size: 20px;">
+          <li>POST bot stats with our api.
+          <li>Good Long Description With MarkDown.
+          <li>In atleast 75 servers.
+          <li>Follow discord best practice.
+          <li>Your bot should have a support server.
+          <li>You must have atleast 15 votes.
+      </ul>
+    </div>
+   </div>
+  </center>
+ <hr>
+<center>
+<div class="terms_card">
+  <% if(bots.length === 0) { %>
+    <p><i class="fa fa-warning"></i> You don't have any approved bots to certify!</p>
+    <% }else{ %>
+<form method="POST">
+    <h3><i class="fa fa-certificate"></i> Select a bot</h3>
+    <select class="input" style="width: 300px;" name="botID" required>
+       <% bots.map(the_bot => { %>
+          <option value="<%= the_bot.botid %>"><%= bot.users.cache.get(the_bot.botid) ? bot.users.cache.get(the_bot.botid).username : the_bot.username %></option>
+        <% }) %>
+    </select><br><br>
+    <button value="certifiy bot" class="button" style="width: 250px;" name="submit"><i class="fa fa-certificate"></i> Submit</button>
+</form>
+  <% } %>
+</div>
+</center>
+<br><br><br><br><br><br>
+</body>
+<%- include("../partials/footer") %>
+</html>

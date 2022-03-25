@@ -1,0 +1,17 @@
+.alert {
+   background-color: rgb(151, 255, 177);  
+   border: solid; 
+   border-color: black; 
+   width: 100%; 
+   border-radius: 20px; 
+   padding: 6px
+}
+
+.error {
+   background-color: rgb(255, 87, 87);  
+   border: solid; 
+   border-color: black; 
+   width: 100%; 
+   border-radius: 20px; 
+   padding: 6px
+}

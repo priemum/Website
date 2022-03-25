@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <title>Paradise Bot List - <%= bots.username %></title>
+</head>
+<body>
+<%- include("../partials/header", { bot, user, path }) %>
+<br>
+<br>
+<center>
+    <% if (alert) { %>
+      <div style="background-color: rgb(151, 255, 177);  border: solid; border-color: black; width: 100%; height: 40px; border-radius: 20px; padding: 6px">
+        <b style="color: rgb(70, 150, 70);"><%= alert %></b>
+      </div>
+    <% }else if(error){ %>
+      <div style="background-color: rgb(255, 87, 87);  border: solid; border-color: black; width: 100%; height: 40px; border-radius: 20px; padding: 6px">
+        <b style="color: white;"><%= error %></b>
+      </div>
+      <% } %>
+    </center>
+      <br>
+<center>
+<img style="border-radius: 100px; width: 180px;" src="<%= bots.displayAvatarURL() %>">
+<h1>Report <%= bots.username %></h1>
+<br>
+<p>Write a report for this bot</p>
+<br>
+<form method="POST">
+<!-- <div class="g-recaptcha" data-sitekey="6LeKdN4ZAAAAAE40s_gtfLrL5kxd6YjNXQDVx8Ra"></div> -->
+<textarea class="input" type="text" name="report_desc" style="width: 700px; height: 250px;" placeholder="i.e This bot is a fork from this github repo https://github.com/" required></textarea>
+<br>
+<button name="report_bot" value="report" class="button" style="width:170px">Report</button>
+<button formaction="/bots/<%=bots.id %>" class="button" type="submit" style="width:170px">Go Back</button>
+</form>
+</center>
+<br>
+<script>
+(function() {
+        //window.addEventListener("load", function(){
+	if (!localStorage.getItem('cookieconsent')) {
+		document.body.innerHTML += '\
+		<div class="cookieconsent" style="position:fixed;padding:20px;left:0;bottom:0;background-color:#000;color:#FFF;text-align:center;width:100%;z-index:99999;">\
+			This website uses cookies to improve your experience. By continuing to use this website, you agree to their use. \
+                <a href="#" style="color:#CCCCCC;">I Understand</a>\
+		</div>\
+		';
+		document.querySelector('.cookieconsent a').onclick = function(e) {
+			e.preventDefault();
+			document.querySelector('.cookieconsent').style.display = 'none';
+			localStorage.setItem('cookieconsent', true);
+		};
+	}
+})();
+</script>
+<br><br><br><br><br><br>
+<%- include("../partials/footer") %>
+</body>
+</html>

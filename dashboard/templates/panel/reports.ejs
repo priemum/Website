@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Paradise Bot list - Staff Panel</title>
+</head>
+<body>
+<%- include("../partials/header", { bot, user, path, }) %>
+<br>
+<center>
+    <% if (alert) { %>
+      <div class="alert">
+        <b style="color: rgb(70, 150, 70);"><%= alert %></b>
+      </div>
+    <% }else if(error){ %>
+      <div class="error">
+        <b style="color: white;"><%= error %></b>
+      </div>
+      <% } %>
+    </center>
+      <br>
+<center>
+<h1 style="margin-left: 100px;"><i class="fa fa-bug"></i> Bug Reports</h1>
+<hr style="margin-left: 200px; margin-right: 200px;">
+</center>
+<center>
+<div class="container">
+  <% if(reportbug.length === 0){ %>
+    <b style="font-size: 30px;"><i class="fa fa-wrench"></i> No bug reports</b><br>
+    <% }else{ %>
+  <% reportbug.forEach(reportbug => { %>
+    <div style=" margin-right: 100px; margin-left: 100px; width: 75%; background-color: rgb(117, 138, 207); border-radius: 5px; padding: 10px; margin: 15px">
+      <div style="margin-right: 50px; margin-left: 50px;">
+      <br>
+      <b style="color: white;">ID: <%= reportbug.userID %></b>
+     <hr>
+        <p style="font-size: 20px; color: white;"><%= reportbug.bug %></p>
+      <br>
+      <form style="margin-top: 1em;" method="POST"> <!-- method="post" tiggers a POST request to the same url with the body of the form control inputs -->
+      <button name="acceptbug" value="<%= reportbug.userID %>" class="button custom" style="width: 130px;">Approve Bug</button>
+      </form>
+      </div>
+      </div>
+    </center>
+    <% }) %>
+    <% } %>
+  </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+<%- include("../partials/footer") %>
+</html>

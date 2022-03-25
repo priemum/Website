@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Paradise Bot List - Ownership Transfer</title>
+</head>
+<body>
+  <%- include("../partials/header", { bot, user, path, }) %>
+  <%- include("../partials/termsCard") %> 
+  <br>
+<center>
+    <% if (alert) { %>
+      <div style="background-color: rgb(151, 255, 177);  border: solid; border-color: black; width: 100%; border-radius: 20px; padding: 6px">
+        <b style="color: rgb(70, 150, 70);"><%= alert %></b>
+      </div>
+    <% }else if(error){ %>
+      <div style="background-color: rgb(255, 87, 87);  border: solid; border-color: black; width: 100%; border-radius: 20px; padding: 6px">
+        <b style="color: white;"><%= error %></b>
+      </div>
+      <% } %>
+    </center>
+      <br>
+<br>
+
+<hr style="margin-left: 200px; margin-right: 200px;">
+<h2>The Danger Zone!!!!</h2>
+<center>
+<div class="terms_card">
+ <center>
+  <h1><i class="fa fa-exchange"></i> Transfer Ownership</h1>
+  <hr>
+   <form style="margin-top: 1em;" method="POST"> <!-- method="post" tiggers a POST request to the same url with the body of the form control inputs -->
+    <p>Bot ID to transfer</p>
+     <input class="w3-input w3-border"  style="border-radius: 5px; width: 75%" maxlength="18" type="text" name="clientid" placeholder="<%= bots.botid %>" value="<%= bots.botid %>" readonly></input>
+  <hr>
+     <p>User ID to transfer the bot to</p>
+       <input class="w3-input w3-border"  style="border-radius: 5px; width: 75%" maxlength="18" type="text" name="userid" placeholder="i.e 510065483693817867" required></input>
+   <hr>
+     <p>Write a reason for transfer</p>
+       <textarea class="input" style="width: 75%; height: 180px;" name="transferreason" placeholder="i.e Owner requested a transfer!" required></textarea>
+   <br>
+      <button name="checkingtransfer" value="hmmmm" class="button custom" style="width: 120px;">Transfer Bot</button>
+   </form>
+  </center>
+ </div>
+</center>
+</body>
+</html>
+<br><br><br><br><br><br>
+<%- include("../partials/footer") %>

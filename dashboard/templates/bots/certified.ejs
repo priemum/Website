@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="og:description" content="A up-to date list of our Certified Bots" />
+    <meta name="og:image" content="https://images-ext-2.discordapp.net/external/bNXYdDWBPNNCuJcmApg6Ub34eK67k3uM4zMCoJDfBsQ/https/media.discordapp.net/attachments/747390406722977863/761491368911962132/Paradise_logo_halloween.png" />
+    <meta name="og:title" content="Paradise Bot List | Certified Bots" />
+    <meta name="theme-color" content="#fc7b03" />
+    <meta name="keywords" content="discordbots.org , top.gg, Discordbots.co , Bots , bot list , paradisebots.net, discord bot list , discord boats , blaze , lists, discord bots , discord bots list">
+    <meta property="og:description" content="A up-to date list of our Certified Bots" />
+    <meta name="og:image" content="https://images-ext-2.discordapp.net/external/bNXYdDWBPNNCuJcmApg6Ub34eK67k3uM4zMCoJDfBsQ/https/media.discordapp.net/attachments/747390406722977863/761491368911962132/Paradise_logo_halloween.png" />
+    <meta name="theme-color" content="#fc7b03" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://media.discordapp.net/attachments/630858840585535498/750450513304223885/image0.png" style="border-radius: 80px;" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Paradise Bot List | Certified Bots</title>
+</head>
+<body>
+<%- include("../partials/header", { bot, user, path, }) %>
+<br>
+<br>
+
+<style>
+.badge img {
+    width: 30px;
+    margin-right: 10px;
+    vertical-align:middle
+}
+
+.badge {
+    display: flex;
+    align-items:center;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #758acf;
+    border-radius: 50px;
+}
+</style>
+
+<center>
+
+<img src="https://media.discordapp.net/attachments/747390406722977863/760792636436250644/cert.png" width="125px" height="125px">
+
+<h1>Certified Bots</h1>
+<center><a href="https://docs.paradisebots.net/community/certification/" class="viewbutton" ><i class="fa fa-book"></i> Certification Requirements</a></center>
+
+</center>
+
+<br><br>
+
+<div class="container">
+  <% if(bots.length === 0) { %>
+    <p>No bots for now</p>
+    <% } %>
+<% for (i = 0; i < bots.length; i++) { %>
+  <% bot.users.fetch(bots[i].botid) %>
+    <% } %>
+    <% for (i = 0; i < bots.length; i++) { %>
+  <div class="botcard">
+    <% let botname = ""; %>
+    <% let botavatar = ""; %>
+    <% let presence = ""; %>
+    <% let thebot = bot.users.cache.get(bots[i].botid) %>
+    <% if(bot.users.cache.get(bots[i].botid)) { %>
+      <% botname = bot.users.cache.get(bots[i].botid).username %>
+      <% botavatar = bot.users.cache.get(bots[i].botid).displayAvatarURL()  %>
+      <% presence = bot.users.cache.get(bots[i].botid).presence.status %>
+      <% }else{ %>
+        <% botavatar = bots[i].avatar %>
+      <% botname = "Error fetching" %>
+      <% } %>
+      <% if(botname.length > 22){ %>
+        <% botname = botname.slice(0 , 19) + "..." %>
+      <% } %>
+      <% if(presence == "online"){ %>
+        <img src="https://cdn.discordapp.com/avatars/<%= thebot.id %>/<%= thebot.avatar %>" style="width: 120px; height: 120px; border-radius: 70px; border-style: solid; border-color: greenyellow;"> 
+      <% }else if(presence== "idle"){ %>
+        <img src="https://cdn.discordapp.com/avatars/<%= thebot.id %>/<%= thebot.avatar %>" style="width: 120px; height: 120px; border-radius: 70px; border-style: solid; border-color: rgb(255, 189, 47);"> 
+      <% }else if(presence == "dnd"){ %> 
+        <img src="https://cdn.discordapp.com/avatars/<%= thebot.id %>/<%= thebot.avatar %>" style="width: 120px; height: 120px; border-radius: 70px; border-style: solid; border-color: rgb(255, 47, 47);"> 
+      <% }else{ %> 
+        <img src="https://cdn.discordapp.com/avatars/<%= thebot.id %>/<%= thebot.avatar %>" style="width: 120px; height: 120px; border-radius: 70px; border-style: solid; border-color: rgb(207, 207, 207);"> 
+      <% } %>
+      <div class="container">
+      <b style="background-color: #2c2c34;  margin: 10px; height: 30px; border-radius: 20px; padding: 5px;"><i class="fa fa-check"></i> <%= bots[i].votes %></b>
+      <b style="background-color: #2c2c34;  margin: 10px; height: 30px; border-radius: 20px; padding: 5px;"><i class="fa fa-server"></i> <%= bots[i].servers === 0 ? "N/A" : bots[i].servers %></b>
+      <b style="background-color: #2c2c34;  margin: 10px; height: 30px; border-radius: 20px; padding: 5px;"><i class="fa fa-sitemap"></i> <%= bots[i].shards === 0 ? "N/A" : bots[i].shards %></b>
+      <% if(bots[i].is_certified || bots[i].certifiedBot === 'certified') { %>
+      <b style="background-color: #2c2c34;  margin: 10px; height: 35px; border-radius: 20px; padding: 5px;"> <img src='https://media.discordapp.net/attachments/747390406722977863/760792636436250644/cert.png' title='Certified' width="25px" height="25px"/> Certified</b>
+      <% } %>
+      <% if(bots[i].partneredBot === 'partnered') { %>
+      <b style="background-color: #2c2c34;  margin: 10px; height: 35px; border-radius: 20px; padding: 5px;"> <img src='https://media.discordapp.net/attachments/747390406722977863/760782195249381406/partner.png' title='Partnered' width="25px" height="25px"/> Partnered</b>
+  <% } %>
+  </div>
+
+    <h2><%= botname %></h2>
+    <p style="word-wrap:break-word;"><%= bots[i].short %></p>
+    <% bots[i].tags.split(", ").map(x => { %>
+      <b style="color: white;  background-color: #2c2c34; border-radius: 20px; padding: 3px; font-size: 12px;"><%= x %></b> 
+      <% }) %>
+      <br>
+      <br>
+    <a href="<%= bots[i].invite %>" class="viewbutton" style="background-color: transparent;" ><i class="fa fa-plus"></i> Invite</a>
+    <a href="/bots/<%= bots[i].botid %>" class="viewbutton" style="background-color: transparent;" ><i class="fa fa-eye"></i> View</a>
+  </div>
+<% } %>  
+</div>
+<br><br><br><br><br><br>
+<%- include("../partials/footer") %>
+</body>
+</html>

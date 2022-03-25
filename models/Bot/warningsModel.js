@@ -1,40 +1,40 @@
-const mongo = require ('mongoose');
+const mongo = require("mongoose");
 
 const warnings = mongo.Schema({
-    userID: {
-        type: String
-    },
+  userID: {
+    type: String,
+  },
 
-    userName: {
-        type: String
-    },
+  userName: {
+    type: String,
+  },
 
-    warnedBy: {
-        type: String
-    },
+  warnedBy: {
+    type: String,
+  },
 
-    warnedByName: {
-        type: String
-    },
+  warnedByName: {
+    type: String,
+  },
 
-    numberOfWarns: {
-        type: Number,
-        default: 0
-    },
+  numberOfWarns: {
+    type: Number,
+    default: 0,
+  },
 
-    reasonForWarn: {
-        type: String
-    },
+  reasonForWarn: {
+    type: String,
+  },
 
-    dateOfWarn: {
-        type: Date,
-        default: () => new Date()
-    },
+  dateOfWarn: {
+    type: Date,
+    default: () => new Date(),
+  },
 
-    recentlyCleared: {
-        type: Boolean,
-        default: false
-    }
+  recentlyCleared: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongo.model("warnings", warnings);

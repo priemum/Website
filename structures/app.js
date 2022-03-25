@@ -1,7 +1,6 @@
 const path = require("path");
 const express = require("express");
-const cookieParser = require('cookie-parser')
-
+const cookieParser = require("cookie-parser");
 
 const getFilesSync = require("../utils/fileWalk");
 
@@ -10,11 +9,9 @@ class App {
     this.express = express();
     this.express.use(cookieParser());
 
-    this
-      .loadRoutes()
+    this.loadRoutes();
   }
 
-  
   loadtheRoutes() {
     const routesPath = path.join(__dirname, "../routes");
     const routes = getFilesSync(routesPath);
@@ -23,8 +20,9 @@ class App {
 
     routes.forEach((filename) => {
       const route = require(path.join(routesPath, filename));
-      
-      const routePath = filename === "index.js" ? "/" : `/${filename.slice(0, -3)}`;
+
+      const routePath =
+        filename === "index.js" ? "/" : `/${filename.slice(0, -3)}`;
 
       try {
         this.express.use(routePath, route);

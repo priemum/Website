@@ -1,50 +1,50 @@
-const mongo = require ('mongoose');
+const mongo = require("mongoose");
 
 const automation_settings = mongo.Schema({
-    antiSpam: {
-        type: Boolean,
-        default: false
-    },
-
-     antiLinks: {
-        type: Boolean,
-        default: false
-    },
-
-antiInvite: {
+  antiSpam: {
     type: Boolean,
-    default: false
-},
+    default: false,
+  },
 
-antiBad: {
+  antiLinks: {
     type: Boolean,
-    default: false
-},
+    default: false,
+  },
 
-antiEveryone: {
+  antiInvite: {
     type: Boolean,
-    default: false
-},
+    default: false,
+  },
 
-maxMentions: {
-    type: Number
-},
+  antiBad: {
+    type: Boolean,
+    default: false,
+  },
 
-maxLines: {
-    type: Number
-},
+  antiEveryone: {
+    type: Boolean,
+    default: false,
+  },
 
-ignoredRoles: {
-    type: Array
-},
+  maxMentions: {
+    type: Number,
+  },
 
-ignoredUsers: {
-    type: Array
-},
+  maxLines: {
+    type: Number,
+  },
 
-ignoredChannels: {
-    type: Array
-  } 
-})
+  ignoredRoles: {
+    type: Array,
+  },
+
+  ignoredUsers: {
+    type: Array,
+  },
+
+  ignoredChannels: {
+    type: Array,
+  },
+});
 
 module.exports = mongo.model("automod", automation_settings);

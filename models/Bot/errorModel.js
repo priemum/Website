@@ -1,22 +1,22 @@
-const mongo = require ('mongoose');
+const mongo = require("mongoose");
 
 const paradiseErrors = mongo.Schema({
-    errorCode: {
-        type: String,
-    },
+  errorCode: {
+    type: String,
+  },
 
-    error: {
-        type: String
-    },
+  error: {
+    type: String,
+  },
 
-    errorTimestamp: {
-        type: Date,
-        default: () => new Date()
-    },
+  errorTimestamp: {
+    type: Date,
+    default: () => new Date(),
+  },
 
-    errorPath: {
-        type: String
-    }
+  errorPath: {
+    type: String,
+  },
 });
 
-module.exports = mongo.model('Bot Errors', paradiseErrors);
+module.exports = mongo.model("Bot Errors", paradiseErrors);

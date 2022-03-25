@@ -1,23 +1,23 @@
-const mongo = require ('mongoose');
+const mongo = require("mongoose");
 
 const log_settings = mongo.Schema({
-    logsChannel: {
-        type: String,
-        default: 'paradise-logs'
-    },
+  logsChannel: {
+    type: String,
+    default: "paradise-logs",
+  },
 
-    chatLogs: {
-        type: String,
-    },
+  chatLogs: {
+    type: String,
+  },
 
-    modLogs: {
-        type: String,
-        default: 'mod-logs'
-    },
+  modLogs: {
+    type: String,
+    default: "mod-logs",
+  },
 
-    serverLogs: {
-        type: String
-    }
-})
+  serverLogs: {
+    type: String,
+  },
+});
 
 module.exports = mongo.model("logs", log_settings);

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const newusers = mongoose.Schema({
   user: String,
@@ -7,4 +7,4 @@ const newusers = mongoose.Schema({
   voteBanned: String,
 });
 
-module.exports = mongoose.model("vote_tables", newusers);
+module.exports = mongoose.model('vote_tables', newusers);

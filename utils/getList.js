@@ -1,6 +1,6 @@
-const Bots = require("../models/bots");
+const Bots = require('../models/bots');
 
 module.exports = async () => {
   const bots = await Bots.find({}, { _id: false, auth: false });
-  return bots.filter((bot) => bot.status != "denied");
+  return bots.filter((bot) => bot.status != 'denied');
 };

@@ -4,10 +4,10 @@ module.exports = (client, message) => {
       ? extension(message.attachments.array()[0].proxyURL)
       : false;
 
-  message.content.replace("\n", "");
+  message.content.replace('\n', '');
 
   if (message.content.length > 200) {
-    message.content = message.content.slice(0, 200) + " ...";
+    message.content = message.content.slice(0, 200) + ' ...';
   }
 
   let snipe = client.snipeMap.get(message.guild.id);

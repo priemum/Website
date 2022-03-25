@@ -1,14 +1,14 @@
-const BOTS = require("../models/bots");
-const { MessageEmbed } = require("discord.js");
+const BOTS = require('../models/bots');
+const { MessageEmbed } = require('discord.js');
 module.exports.run = async (client, message, args) => {
   message.delete().catch();
 
-  let msg = "";
-  let bots = await BOTS.find({ status: "pending" }, { _id: false });
+  let msg = '';
+  let bots = await BOTS.find({ status: 'pending' }, { _id: false });
 
   if (bots.length === 0) {
     msg =
-      "There are currently no bots in our queue, You can add one [here](https://paradisebots.net/add)";
+      'There are currently no bots in our queue, You can add one [here](https://paradisebots.net/add)';
   } else {
     bots.forEach((bot) => {
       let botUsername = client.users.cache.get(bot.id);
@@ -17,21 +17,21 @@ module.exports.run = async (client, message, args) => {
   }
 
   message.channel.send(
-    new MessageEmbed().addField("Bots in Queue", msg).setColor(0x6b83aa)
+    new MessageEmbed().addField('Bots in Queue', msg).setColor(0x6b83aa),
   );
 };
 
 module.exports.help = {
-  name: "queue",
-  category: "info",
-  aliases: ["q", "pending"],
-  description: "Provides a list of bots awaiting our approval",
-  example: "``queue``",
+  name: 'queue',
+  category: 'info',
+  aliases: ['q', 'pending'],
+  description: 'Provides a list of bots awaiting our approval',
+  example: '``queue``',
 };
 
 module.exports.requirements = {
   userPerms: [],
-  clientPerms: ["EMBED_LINKS"],
+  clientPerms: ['EMBED_LINKS'],
   ownerOnly: false,
 };
 

@@ -1,13 +1,13 @@
-const BOTS = require("../models/bots");
-const { MessageEmbed } = require("discord.js");
+const BOTS = require('../models/bots');
+const { MessageEmbed } = require('discord.js');
 module.exports.run = async (client, message, args) => {
   message.delete().catch();
 
   //check if more than 1 user is mentioned
-  if (args.length > 1) return message.channel.send("Only mention one user!");
+  if (args.length > 1) return message.channel.send('Only mention one user!');
 
   //check if there is no arguments
-  if (!args[0]) return message.channel.send("Mention someone!");
+  if (!args[0]) return message.channel.send('Mention someone!');
 
   //check if there is 1 argument
   if (args[0]) {
@@ -17,12 +17,12 @@ module.exports.run = async (client, message, args) => {
     let customStatus;
 
     member.presence.activities.forEach((activity) => {
-      if (activity.type === "CUSTOM_STATUS") {
+      if (activity.type === 'CUSTOM_STATUS') {
         customStatus = activity.state;
-      } else if (activity.type === "undefined") {
-        customStatus = "No status set";
+      } else if (activity.type === 'undefined') {
+        customStatus = 'No status set';
       } else {
-        customStatus = "No status set";
+        customStatus = 'No status set';
       }
     });
 
@@ -35,27 +35,27 @@ module.exports.run = async (client, message, args) => {
     //if the member exists create an embed with info about that user and send it to the channel
     if (member) {
       let embed = new MessageEmbed()
-        .setTitle("Member Information")
+        .setTitle('Member Information')
         .setThumbnail(member.user.displayAvatarURL())
         .setAuthor(
           `${member.user.tag} (${member.user.id})`,
-          member.user.displayAvatarURL()
+          member.user.displayAvatarURL(),
         )
-        .addField("**Username:**", `${member.user.username}`, true)
-        .addField("**Discriminator:**", `${member.user.discriminator}`, true)
-        .addField("**ID:**", `${member.user.id}`, true)
-        .addField("**Bots:**", `${userBots.length} Bots listed`, true)
-        .addField("**Custom Status**", customStatus, true)
-        .addField("**Joined On:**", `${member.joinedAt.toLocaleString()}`, true)
+        .addField('**Username:**', `${member.user.username}`, true)
+        .addField('**Discriminator:**', `${member.user.discriminator}`, true)
+        .addField('**ID:**', `${member.user.id}`, true)
+        .addField('**Bots:**', `${userBots.length} Bots listed`, true)
+        .addField('**Custom Status**', customStatus, true)
+        .addField('**Joined On:**', `${member.joinedAt.toLocaleString()}`, true)
         .addField(
-          "**Created On:**",
+          '**Created On:**',
           `${member.user.createdAt.toLocaleString()}`,
-          true
+          true,
         )
         .setDescription(
           `Assigned Roles: ${member.roles.cache
             .map((role) => role.toString())
-            .join(" ")}`
+            .join(' ')}`,
         )
         .setFooter(`Requested By: ${message.author.username}`);
 
@@ -67,16 +67,16 @@ module.exports.run = async (client, message, args) => {
 };
 
 module.exports.help = {
-  name: "userinfo",
-  category: "info",
-  aliases: ["whois"],
-  description: "Shows you some information about the provided user",
-  example: "``userinfo <@user>``",
+  name: 'userinfo',
+  category: 'info',
+  aliases: ['whois'],
+  description: 'Shows you some information about the provided user',
+  example: '``userinfo <@user>``',
 };
 
 module.exports.requirements = {
   userPerms: [],
-  clientPerms: ["EMBED_LINKS"],
+  clientPerms: ['EMBED_LINKS'],
   ownerOnly: false,
 };
 

@@ -1,13 +1,13 @@
-const BOTS = require("../models/bots");
-const { MessageEmbed } = require("discord.js");
-const moment = require("moment");
+const BOTS = require('../models/bots');
+const { MessageEmbed } = require('discord.js');
+const moment = require('moment');
 
 module.exports.run = async (client, message, args) => {
   message.delete().catch();
 
   message.channel.send(`${message.author.username} has died.`).then((msg) => {
     setTimeout(() => {
-      msg.edit("Respawning...");
+      msg.edit('Respawning...');
     }, 1000);
     setTimeout(() => {
       if (Math.floor(Math.random() * 100) > 50) {
@@ -20,16 +20,16 @@ module.exports.run = async (client, message, args) => {
 };
 
 module.exports.help = {
-  name: "kms",
-  category: "Fun",
-  aliases: ["killme"],
-  description: "Kill yourself, with a Revival",
-  example: "``kms``",
+  name: 'kms',
+  category: 'Fun',
+  aliases: ['killme'],
+  description: 'Kill yourself, with a Revival',
+  example: '``kms``',
 };
 
 module.exports.requirements = {
   userPerms: [],
-  clientPerms: ["EMBED_LINKS"],
+  clientPerms: ['EMBED_LINKS'],
   ownerOnly: false,
 };
 

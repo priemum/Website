@@ -1,4 +1,4 @@
-const Users = require("../models/users");
+const Users = require('../models/users');
 
 async function is_staff(ID) {
   let user = await Users.findOne({ userID: ID });

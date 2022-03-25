@@ -1,4 +1,4 @@
-const mongo = require("mongoose");
+const mongo = require('mongoose');
 
 const bot_settings = mongo.Schema({
   guildID: {
@@ -7,7 +7,7 @@ const bot_settings = mongo.Schema({
 
   prefix: {
     type: String,
-    default: "p>",
+    default: 'p>',
   },
 
   paradiseOwners: {
@@ -45,4 +45,4 @@ const bot_settings = mongo.Schema({
   },
 });
 
-module.exports = mongo.model("settings", bot_settings);
+module.exports = mongo.model('settings', bot_settings);

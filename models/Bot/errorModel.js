@@ -1,4 +1,4 @@
-const mongo = require("mongoose");
+const mongo = require('mongoose');
 
 const paradiseErrors = mongo.Schema({
   errorCode: {
@@ -19,4 +19,4 @@ const paradiseErrors = mongo.Schema({
   },
 });
 
-module.exports = mongo.model("Bot Errors", paradiseErrors);
+module.exports = mongo.model('Bot Errors', paradiseErrors);

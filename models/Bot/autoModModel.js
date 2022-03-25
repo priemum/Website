@@ -1,4 +1,4 @@
-const mongo = require("mongoose");
+const mongo = require('mongoose');
 
 const automation_settings = mongo.Schema({
   antiSpam: {
@@ -47,4 +47,4 @@ const automation_settings = mongo.Schema({
   },
 });
 
-module.exports = mongo.model("automod", automation_settings);
+module.exports = mongo.model('automod', automation_settings);

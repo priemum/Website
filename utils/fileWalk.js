@@ -1,7 +1,7 @@
-const fs = require("fs");
+const fs = require('fs');
 
 module.exports = (filepath) => {
-  if (!filepath) throw new Error("No file path provided!");
+  if (!filepath) throw new Error('No file path provided!');
 
   if (!fs.existsSync(filepath)) fs.mkdirSync(filepath);
 

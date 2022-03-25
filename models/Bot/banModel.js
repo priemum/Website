@@ -1,4 +1,4 @@
-const mongo = require("mongoose");
+const mongo = require('mongoose');
 
 const userBans = mongo.Schema({
   caseID: {
@@ -27,4 +27,4 @@ const userBans = mongo.Schema({
   },
 });
 
-module.exports = mongo.model("userBans", userBans);
+module.exports = mongo.model('userBans', userBans);

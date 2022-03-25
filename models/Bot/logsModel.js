@@ -1,9 +1,9 @@
-const mongo = require("mongoose");
+const mongo = require('mongoose');
 
 const log_settings = mongo.Schema({
   logsChannel: {
     type: String,
-    default: "paradise-logs",
+    default: 'paradise-logs',
   },
 
   chatLogs: {
@@ -12,7 +12,7 @@ const log_settings = mongo.Schema({
 
   modLogs: {
     type: String,
-    default: "mod-logs",
+    default: 'mod-logs',
   },
 
   serverLogs: {
@@ -20,4 +20,4 @@ const log_settings = mongo.Schema({
   },
 });
 
-module.exports = mongo.model("logs", log_settings);
+module.exports = mongo.model('logs', log_settings);

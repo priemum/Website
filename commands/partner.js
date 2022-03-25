@@ -1,5 +1,5 @@
-const BOTS = require("../models/bots");
-const { MessageEmbed } = require("discord.js");
+const BOTS = require('../models/bots');
+const { MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, args, guild) => {
   message.delete().catch();
@@ -7,20 +7,20 @@ module.exports.run = async (client, message, args, guild) => {
   let user = message.mentions.users.first() || args[0];
 
   const modLog = message.guild.channels.cache.find(
-    (channel) => channel.name === "website-logs"
+    (channel) => channel.name === 'website-logs',
   );
 
-  const certifiedBotRole = message.guild.roles.cache.get("757090505850093619");
+  const certifiedBotRole = message.guild.roles.cache.get('757090505850093619');
 
-  const certifiedDevRole = message.guild.roles.cache.get("749862856035401807");
+  const certifiedDevRole = message.guild.roles.cache.get('749862856035401807');
 
   if (!user || !user.bot) return message.channel.send(`Ping a **bot**.`);
 
   let bot = await BOTS.findOne({ botid: user.id }, { _id: false });
 
-  if (bot.partneredBot === "partnered") {
+  if (bot.partneredBot === 'partnered') {
     let embed = new MessageEmbed()
-      .setTitle("Whoaa, Cant do that.")
+      .setTitle('Whoaa, Cant do that.')
       .setDescription(`${bot.username} Has already been Partnered.`)
       .setThumbnail(bot.avatar)
       .setTimestamp()
@@ -31,13 +31,13 @@ module.exports.run = async (client, message, args, guild) => {
     message.delete().catch();
     await BOTS.updateOne(
       { botid: user.id },
-      { $set: { partneredBot: "partnered" } }
+      { $set: { partneredBot: 'partnered' } },
     );
     let e = new MessageEmbed()
-      .setTitle("Bot Partnered")
+      .setTitle('Bot Partnered')
       .addField(`Bot`, `<@${bot.botid}>`, true)
       .addField(`Owner`, `<@${bot.owner}>`, true)
-      .addField("Mod", message.author, true)
+      .addField('Mod', message.author, true)
       .setThumbnail(bot.avatar)
       .setTimestamp()
       .setColor(0x26ff00);
@@ -63,7 +63,7 @@ module.exports.run = async (client, message, args, guild) => {
       });
 
     let e2 = new MessageEmbed()
-      .setTitle("Bot was Partnered")
+      .setTitle('Bot was Partnered')
       .addField(`Bot`, `${bot.username}`, true)
       .addField(`Owner`, `<@${bot.owner}>`, true)
       .setThumbnail(bot.avatar)
@@ -75,16 +75,16 @@ module.exports.run = async (client, message, args, guild) => {
 };
 
 module.exports.help = {
-  name: "partner",
-  category: "Bot List",
+  name: 'partner',
+  category: 'Bot List',
   aliases: [],
-  description: "Partner the provided bot",
-  example: "``partner <@bot>``",
+  description: 'Partner the provided bot',
+  example: '``partner <@bot>``',
 };
 
 module.exports.requirements = {
   userPerms: [],
-  clientPerms: ["EMBED_LINKS"],
+  clientPerms: ['EMBED_LINKS'],
   higherOnly: true,
 };
 

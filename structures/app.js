@@ -1,8 +1,8 @@
-const path = require("path");
-const express = require("express");
-const cookieParser = require("cookie-parser");
+const path = require('path');
+const express = require('express');
+const cookieParser = require('cookie-parser');
 
-const getFilesSync = require("../utils/fileWalk");
+const getFilesSync = require('../utils/fileWalk');
 
 class App {
   constructor(client) {
@@ -13,7 +13,7 @@ class App {
   }
 
   loadtheRoutes() {
-    const routesPath = path.join(__dirname, "../routes");
+    const routesPath = path.join(__dirname, '../routes');
     const routes = getFilesSync(routesPath);
 
     if (!routes.length) return this;
@@ -22,7 +22,7 @@ class App {
       const route = require(path.join(routesPath, filename));
 
       const routePath =
-        filename === "index.js" ? "/" : `/${filename.slice(0, -3)}`;
+        filename === 'index.js' ? '/' : `/${filename.slice(0, -3)}`;
 
       try {
         this.express.use(routePath, route);

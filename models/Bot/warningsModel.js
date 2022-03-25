@@ -1,4 +1,4 @@
-const mongo = require("mongoose");
+const mongo = require('mongoose');
 
 const warnings = mongo.Schema({
   userID: {
@@ -37,4 +37,4 @@ const warnings = mongo.Schema({
   },
 });
 
-module.exports = mongo.model("warnings", warnings);
+module.exports = mongo.model('warnings', warnings);

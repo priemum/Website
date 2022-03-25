@@ -1,6 +1,6 @@
-const { MessageEmbed } = require("discord.js");
-const moment = require("moment");
-const BOTS = require("../models/bots");
+const { MessageEmbed } = require('discord.js');
+const moment = require('moment');
+const BOTS = require('../models/bots');
 
 module.exports = async (client, member) => {
   //const welcomeChannel = member.guild.channels.cache.get("762752153168117800")
@@ -8,7 +8,7 @@ module.exports = async (client, member) => {
   const memberavatar = member.user.displayAvatarURL;
 
   const welcomeChannel = member.guild.channels.cache.find(
-    (chnl) => chnl.name === "┊greetings"
+    (chnl) => chnl.name === '┊greetings',
   );
 
   const theMember = await client.users.cache.get(member.user.id);
@@ -22,23 +22,23 @@ module.exports = async (client, member) => {
       end == 1 ? count : end == 2 ? count : end == 3 ? count : count;
 
     const botLeaveMessage = new MessageEmbed()
-      .setTitle("➖ A Bot has Left ➖")
-      .setDescription("Hmm, A bot left the Server, is this a mistake?")
-      .addField("Member", `${member.user.username}`, true)
-      .addField("New Member Count", `${suffixed} Members`, true)
+      .setTitle('➖ A Bot has Left ➖')
+      .setDescription('Hmm, A bot left the Server, is this a mistake?')
+      .addField('Member', `${member.user.username}`, true)
+      .addField('New Member Count', `${suffixed} Members`, true)
       .addField(
-        "Joined Discord",
+        'Joined Discord',
         `${moment(member.user.createdAt).toString().substr(0, 15)}\n(${moment(
-          member.user.createdAt
+          member.user.createdAt,
         ).fromNow()})`,
-        true
+        true,
       )
       .addField(
-        "Joined Server",
+        'Joined Server',
         `${moment(member.user.joinedAt).toString().substr(0, 15)}\n(${moment(
-          member.user.joinedAt
+          member.user.joinedAt,
         ).fromNow()})`,
-        true
+        true,
       )
       .setThumbnail(theMember.displayAvatarURL());
 
@@ -52,23 +52,23 @@ module.exports = async (client, member) => {
       end == 1 ? count : end == 2 ? count : end == 3 ? count : count;
 
     const leaveMessage = new MessageEmbed()
-      .setTitle("➖ A Member has Left ➖")
-      .setDescription("Hmm, Someone left the Server.")
-      .addField("Member", `${member.user.username}`, true)
-      .addField("New Member Count", `${suffixed} Members`, true)
+      .setTitle('➖ A Member has Left ➖')
+      .setDescription('Hmm, Someone left the Server.')
+      .addField('Member', `${member.user.username}`, true)
+      .addField('New Member Count', `${suffixed} Members`, true)
       .addField(
-        "Joined Discord",
+        'Joined Discord',
         `${moment(member.user.createdAt).toString().substr(0, 15)}\n(${moment(
-          member.user.createdAt
+          member.user.createdAt,
         ).fromNow()})`,
-        true
+        true,
       )
       .addField(
-        "Joined Server",
+        'Joined Server',
         `${moment(member.user.joinedAt).toString().substr(0, 15)}\n(${moment(
-          member.user.joinedAt
+          member.user.joinedAt,
         ).fromNow()})`,
-        true
+        true,
       )
       .setThumbnail(theMember.displayAvatarURL());
 
@@ -80,18 +80,18 @@ module.exports = async (client, member) => {
         new MessageEmbed()
           .setAuthor(
             member.user.username,
-            member.user.displayAvatarURL({ dynamic: true })
+            member.user.displayAvatarURL({ dynamic: true }),
           )
           .setDescription(
             `
-            ${check.map((bot) => `<@!${bot.botid}>`).join("**, **")}
+            ${check.map((bot) => `<@!${bot.botid}>`).join('**, **')}
             Got Archived because the Owner left our Server!
-            `
+            `,
           )
-          .setTimestamp()
+          .setTimestamp(),
       );
       check.map(async (bot) => {
-        bot.status = "denied";
+        bot.status = 'denied';
         await bot.save();
         member.guild.members.cache
           .get(bot.botid)

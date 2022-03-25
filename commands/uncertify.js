@@ -1,5 +1,5 @@
-const BOTS = require("../models/bots");
-const { MessageEmbed } = require("discord.js");
+const BOTS = require('../models/bots');
+const { MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, args, guild) => {
   message.delete().catch();
@@ -7,20 +7,20 @@ module.exports.run = async (client, message, args, guild) => {
   let user = message.mentions.users.first() || args[0];
 
   const modLog = message.guild.channels.cache.find(
-    (channel) => channel.name === "website-logs"
+    (channel) => channel.name === 'website-logs',
   );
 
-  const certifiedBotRole = message.guild.roles.cache.get("755156793671548979");
+  const certifiedBotRole = message.guild.roles.cache.get('755156793671548979');
 
-  const certifiedDevRole = message.guild.roles.cache.get("759599781487181865");
+  const certifiedDevRole = message.guild.roles.cache.get('759599781487181865');
 
   if (!user || !user.bot) return message.channel.send(`Ping a **bot**.`);
 
   let bot = await BOTS.findOne({ botid: user.id }, { _id: false });
 
-  if (bot.certifiedBot === "uncertified") {
+  if (bot.certifiedBot === 'uncertified') {
     let embed = new MessageEmbed()
-      .setTitle("Whoaa, Cant do that.")
+      .setTitle('Whoaa, Cant do that.')
       .setDescription(`${bot.username} Has not been Certified.`)
       .setThumbnail(bot.avatar)
       .setTimestamp()
@@ -31,13 +31,13 @@ module.exports.run = async (client, message, args, guild) => {
     message.delete().catch();
     await BOTS.updateOne(
       { botid: user.id },
-      { $set: { certifiedBot: "uncertified" } }
+      { $set: { certifiedBot: 'uncertified' } },
     );
     let e = new MessageEmbed()
-      .setTitle("Bot UnCertified")
+      .setTitle('Bot UnCertified')
       .addField(`Bot`, `<@${bot.botid}>`, true)
       .addField(`Owner`, `<@${bot.owner}>`, true)
-      .addField("Mod", message.author, true)
+      .addField('Mod', message.author, true)
       .setThumbnail(bot.avatar)
       .setTimestamp()
       .setColor(0x26ff00);
@@ -63,7 +63,7 @@ module.exports.run = async (client, message, args, guild) => {
       });
 
     let e2 = new MessageEmbed()
-      .setTitle("Bot was UnCertified")
+      .setTitle('Bot was UnCertified')
       .addField(`Bot`, `${bot.username}`, true)
       .addField(`Owner`, `<@${bot.owner}>`, true)
       .setThumbnail(bot.avatar)
@@ -75,16 +75,16 @@ module.exports.run = async (client, message, args, guild) => {
 };
 
 module.exports.help = {
-  name: "uncertify",
-  category: "Bot List",
+  name: 'uncertify',
+  category: 'Bot List',
   aliases: [],
-  description: "UnCertify the provided bot",
-  example: "``uncertify <@bot>``",
+  description: 'UnCertify the provided bot',
+  example: '``uncertify <@bot>``',
 };
 
 module.exports.requirements = {
   userPerms: [],
-  clientPerms: ["EMBED_LINKS"],
+  clientPerms: ['EMBED_LINKS'],
   higherOnly: true,
 };
 

@@ -1,7 +1,7 @@
-const BOTS = require("../models/bots");
-const { MessageEmbed } = require("discord.js");
-const moment = require("moment");
-const fetch = require("node-fetch");
+const BOTS = require('../models/bots');
+const { MessageEmbed } = require('discord.js');
+const moment = require('moment');
+const fetch = require('node-fetch');
 
 module.exports.run = async (client, message, args) => {
   message.delete().catch();
@@ -15,16 +15,16 @@ module.exports.run = async (client, message, args) => {
 };
 
 module.exports.help = {
-  name: "widget",
-  category: "info",
-  aliases: ["embed"],
-  description: "Sends the widget for the Bot Provided",
-  example: "``widget <@bot>``",
+  name: 'widget',
+  category: 'info',
+  aliases: ['embed'],
+  description: 'Sends the widget for the Bot Provided',
+  example: '``widget <@bot>``',
 };
 
 module.exports.requirements = {
   userPerms: [],
-  clientPerms: ["EMBED_LINKS"],
+  clientPerms: ['EMBED_LINKS'],
   ownerOnly: false,
 };
 

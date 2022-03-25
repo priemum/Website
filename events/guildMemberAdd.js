@@ -1,5 +1,5 @@
-const { MessageEmbed } = require("discord.js");
-const moment = require("moment");
+const { MessageEmbed } = require('discord.js');
+const moment = require('moment');
 
 module.exports = async (client, member) => {
   //const welcomeChannel = member.guild.channels.cache.get("762752153168117800")
@@ -7,12 +7,12 @@ module.exports = async (client, member) => {
   const memberavatar = member.user.displayAvatarURL();
 
   const welcomeChannel = member.guild.channels.cache.find(
-    (chnl) => chnl.name === "┊greetings"
+    (chnl) => chnl.name === '┊greetings',
   );
 
-  const botsInQRole = member.guild.roles.cache.get("748977820457238533");
+  const botsInQRole = member.guild.roles.cache.get('748977820457238533');
 
-  const membersRole = member.guild.roles.cache.get("748977820776267866");
+  const membersRole = member.guild.roles.cache.get('748977820776267866');
 
   const theMember = await client.users.cache.get(member.user.id);
 
@@ -25,23 +25,23 @@ module.exports = async (client, member) => {
       end == 1 ? count : end == 2 ? count : end == 3 ? count : count;
 
     const botJoinMessage = new MessageEmbed()
-      .setTitle("➕ A Bot has Joined ➕")
-      .setDescription("A bot has been added to the Server for testing!")
-      .addField("Member", `${member.user.username}`, true)
-      .addField("New Member Count", `${suffixed} Members`, true)
+      .setTitle('➕ A Bot has Joined ➕')
+      .setDescription('A bot has been added to the Server for testing!')
+      .addField('Member', `${member.user.username}`, true)
+      .addField('New Member Count', `${suffixed} Members`, true)
       .addField(
-        "Joined Discord",
+        'Joined Discord',
         `${moment(member.user.createdAt).toString().substr(0, 15)}\n(${moment(
-          member.user.createdAt
+          member.user.createdAt,
         ).fromNow()})`,
-        true
+        true,
       )
       .addField(
-        "Joined Server",
+        'Joined Server',
         `${moment(member.user.joinedAt).toString().substr(0, 15)}\n(${moment(
-          member.user.joinedAt
+          member.user.joinedAt,
         ).fromNow()})`,
-        true
+        true,
       )
       .setThumbnail(theMember.displayAvatarURL());
 
@@ -61,38 +61,38 @@ module.exports = async (client, member) => {
       end == 1 ? count : end == 2 ? count : end == 3 ? count : count;
 
     let rules = await member.guild.channels.cache.find(
-      (c) => c.id === "748977820784394244"
+      (c) => c.id === '748977820784394244',
     );
     let subChan = await member.guild.channels.cache.find(
-      (c) => c.id === "762752158809587732"
+      (c) => c.id === '762752158809587732',
     );
 
     const welcomeMessage = new MessageEmbed()
-      .setTitle("➕ A Member has Joined ➕")
+      .setTitle('➕ A Member has Joined ➕')
       .setDescription(
-        `Welcome to Paradise <@${member.user.id}>, Make sure you check out the ${rules} channel and enjoy your stay.`
+        `Welcome to Paradise <@${member.user.id}>, Make sure you check out the ${rules} channel and enjoy your stay.`,
       )
-      .addField("Member", `${member.user.username}`, true)
-      .addField("Discrim", `${member.user.discriminator}`, true)
-      .addField("New Member Count", `${suffixed} Members`, true)
+      .addField('Member', `${member.user.username}`, true)
+      .addField('Discrim', `${member.user.discriminator}`, true)
+      .addField('New Member Count', `${suffixed} Members`, true)
       .addField(
-        "Joined Discord",
+        'Joined Discord',
         `${moment(member.user.createdAt).toString().substr(0, 15)}\n(${moment(
-          member.user.createdAt
+          member.user.createdAt,
         ).fromNow()})`,
-        true
+        true,
       )
       .addField(
-        "Joined Server",
+        'Joined Server',
         `${moment(member.user.joinedAt).toString().substr(0, 15)}\n(${moment(
-          member.user.joinedAt
+          member.user.joinedAt,
         ).fromNow()})`,
-        true
+        true,
       )
       .addField(
-        "Subscribe to Updates",
-        "`p>sub` or Visit: " + `${subChan}`,
-        true
+        'Subscribe to Updates',
+        '`p>sub` or Visit: ' + `${subChan}`,
+        true,
       )
       .setThumbnail(theMember.displayAvatarURL());
 

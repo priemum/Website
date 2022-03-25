@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const newreport = mongoose.Schema({
   user: String,
@@ -7,4 +7,4 @@ const newreport = mongoose.Schema({
   reason: String,
 });
 
-module.exports = mongoose.model("report_tables", newreport);
+module.exports = mongoose.model('report_tables', newreport);

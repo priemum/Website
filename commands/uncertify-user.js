@@ -1,5 +1,5 @@
-const USERS = require("../models/users");
-const { MessageEmbed } = require("discord.js");
+const USERS = require('../models/users');
+const { MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, args, guild) => {
   message.delete().catch();
@@ -8,11 +8,11 @@ module.exports.run = async (client, message, args, guild) => {
     let user = message.mentions.users.first();
 
     const modLog = message.guild.channels.cache.find(
-      (channel) => channel.name === "website-logs"
+      (channel) => channel.name === 'website-logs',
     );
 
     const certifiedDevRole =
-      message.guild.roles.cache.get("759599781487181865");
+      message.guild.roles.cache.get('759599781487181865');
 
     if (!user || user.bot) return message.channel.send(`Ping a **user**.`);
 
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args, guild) => {
 
     if (!userToCert.certifiedUser) {
       let embed = new MessageEmbed()
-        .setTitle("Whoaa, Cant do that.")
+        .setTitle('Whoaa, Cant do that.')
         .setDescription(`${user.username} Has not been Certified.`)
         .setTimestamp()
         .setColor(0x26ff00);
@@ -30,12 +30,12 @@ module.exports.run = async (client, message, args, guild) => {
       message.delete().catch();
       await USERS.updateOne(
         { userID: user.id },
-        { $set: { certifiedUser: false } }
+        { $set: { certifiedUser: false } },
       );
       let e = new MessageEmbed()
-        .setTitle("User UnCertified")
+        .setTitle('User UnCertified')
         .addField(`User`, `<@${user.id}>`, true)
-        .addField("Mod", message.author, true)
+        .addField('Mod', message.author, true)
         .setTimestamp()
         .setColor(0x26ff00);
       modLog.send(e);
@@ -47,7 +47,7 @@ module.exports.run = async (client, message, args, guild) => {
         });
 
       let e2 = new MessageEmbed()
-        .setTitle("User was UnCertified")
+        .setTitle('User was UnCertified')
         .addField(`User`, `${user.username}`, true)
         .setTimestamp()
         .setColor(0x26ff00);
@@ -56,12 +56,12 @@ module.exports.run = async (client, message, args, guild) => {
     }
   } catch (e) {
     var embed2 = new MessageEmbed();
-    embed2.setTitle("Whoops, Something went wrong!!!");
-    embed2.setColor("#7289DA");
+    embed2.setTitle('Whoops, Something went wrong!!!');
+    embed2.setColor('#7289DA');
     embed2.setDescription(
-      "If this issue continues please contact our Dev Team"
+      'If this issue continues please contact our Dev Team',
     );
-    embed2.addField("Error", `${e.message}`);
+    embed2.addField('Error', `${e.message}`);
     embed2.setTimestamp();
 
     return message.channel.send(embed2);
@@ -69,16 +69,16 @@ module.exports.run = async (client, message, args, guild) => {
 };
 
 module.exports.help = {
-  name: "uncertify-user",
-  category: "Bot List",
+  name: 'uncertify-user',
+  category: 'Bot List',
   aliases: [],
-  description: "UnCertify the provided user, Provides perks on the site.",
-  example: "``uncertify-user <@user>``",
+  description: 'UnCertify the provided user, Provides perks on the site.',
+  example: '``uncertify-user <@user>``',
 };
 
 module.exports.requirements = {
   userPerms: [],
-  clientPerms: ["EMBED_LINKS"],
+  clientPerms: ['EMBED_LINKS'],
   higherOnly: true,
 };
 

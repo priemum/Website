@@ -1,4 +1,4 @@
-const mongo = require("mongoose");
+const mongo = require('mongoose');
 
 const blacklistedUsers = mongo.Schema({
   userID: {
@@ -19,4 +19,4 @@ const blacklistedUsers = mongo.Schema({
   },
 });
 
-module.exports = mongo.model("Blacklisted Users", blacklistedUsers);
+module.exports = mongo.model('Blacklisted Users', blacklistedUsers);

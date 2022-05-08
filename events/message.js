@@ -4,7 +4,7 @@ const { MessageEmbed } = require('discord.js');
 const ratetime = new Set();
 
 mongoose.connect(
-  'mongodb://admin:XclUd5hhWSJDU4Nl@SG-ParadiseBotList-35989.servers.mongodirector.com:27017/admin',
+  'MONGO_CONNECTION_STRING',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

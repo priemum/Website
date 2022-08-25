@@ -4,7 +4,7 @@ const { Client, MessageEmbed, Collection } = require('discord.js');
 const config = require('./config.js');
 const client = new Client({
   disableMentions: 'everyone',
-  disabledEvents: ['TYPING_START'],
+  disabledEvents: ['TYPING_START'],           
 });
 
 client.commands = new Collection();
